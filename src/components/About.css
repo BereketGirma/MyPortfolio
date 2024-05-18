@@ -1,0 +1,79 @@
+*{
+    margin:0;
+    padding: 0;
+    height: auto;
+    width: auto;
+}
+
+/*
+layout for the about contianer
+contains: circle-container,intro-container
+*/
+.about-container{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+/*
+layout for the about contianer
+contains: circle,line
+*/
+.circle-container{
+    display: flex;
+    margin-top: 60px;
+    margin-left: 20px;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    width: 2%;
+    
+}
+/*
+design for the circle
+*/
+.circle{
+    border-radius: 50%;
+    background-color: #5d00f3;
+    width: 20px;
+    height: 20px;
+}
+/*
+design for the line
+*/
+.line{
+    width:6px;
+    height: 150px;
+    background: linear-gradient(to bottom, #5d00f3,#3100b600); 
+}
+
+/*
+layout for the line-contianer
+contains: intro,name,info
+*/
+.intro-container{
+    margin:20px;
+    position: relative;
+    width:98%;
+    height: auto;
+}
+.intro{
+    color:#ffffff;
+    font-size: 75px;
+    font-weight: bolder;
+}
+.name{
+    color:blueviolet
+}
+.info{
+    font-size: 32px;
+    font-style: normal;
+    font-weight: light;
+}
+
+.about-me-container{
+    
+}
+
+
