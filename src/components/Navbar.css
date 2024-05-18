@@ -75,14 +75,16 @@ nav{
     align-items: flex-start;
     justify-content: flex-start;
     position: fixed;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     top:70px;
-    right:-300px;
-    width:150px;
-    height: 100px;
+    right:-200px;
+    width:auto;
+    height: auto;
     background: #0f0420;
     box-shadow: 0 40px 60px rgb(0,0,0,0.06);
-    padding: 10px 0 10px 0;
-    transition:0.5s ease-in-out
+    padding: 10px 10px 10px 10px;
+    transition:0.6s ease-in-out
   }
 }
 

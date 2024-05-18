@@ -1,40 +1,41 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import './Navbar.css';
 
-class NavBar extends Component{
-  state = {clicked:false};
+const NavBar = () =>{
+  const [clicked,setClicked] = useState(false);
   
-  handleClick = () =>{
-    this.setState({clicked:!this.state.clicked})
+  const handleClick = () =>{
+    setClicked(!clicked);
   }
   
-  handleOption = () => {
-    this.setState({clicked:false})
-  }
-  render (){
+  const handleOption = () => {
+    setClicked(false);
+  };
+
     return (
       <nav className="navbar">
         <h1 id = "heading1">Bereket Girma | Portifolio</h1>
         
         <ul id = "navbar"
-        onClick = {this.barOpen} 
-            className={this.state.clicked ? "#navbar active" : "#navbar"}
+            onClick={handleClick}
+            className={clicked ? "#navbar active" : "#navbar"}
             >
-          <li><a href="#home" onClick={this.handleOption}>Home</a></li>
-          <li><a href="#about" onClick={this.handleOption}>About</a></li>
-          <li><a href="#contact" onClick={this.handleOption}>Contact</a></li>
+          <li><a href="#home" onClick={handleOption}>About</a></li>
+          <li><a href="#about" onClick={handleOption}>Projects</a></li>
+          <li><a href ="#projects" onClick={handleOption}>Work</a></li>
+          <li><a href="#contact" onClick={handleOption}>Contact</a></li>
         </ul>
 
         <div id = "mobile"
-        onClick={this.handleClick}>
+        onClick={handleClick}>
           <i id = "bar"
-          className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}>
+          className={clicked ? "fas fa-times" : "fas fa-bars"}>
           </i>
         </div>
       </nav>
     );
   }
-}
+
 
 export default NavBar;
 
