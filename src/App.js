@@ -1,5 +1,5 @@
 import NavBar from './components/Navbar';
-import About from './components/About';
+import Main from './components/Main';
 import './App.css';
 
 
@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <NavBar/>
-      <About/>
+      <Main/>
     </div>
   );
 }
