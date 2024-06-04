@@ -119,8 +119,9 @@ contains: intro,name,info
 }
 
 .about,
-.project{
-    
+.project,
+.experience,
+.contact{
     align-items: center;
     display: flex;
     justify-content:flex-start;
@@ -213,25 +214,153 @@ contains: intro,name,info
     justify-content: right;
 }
 
-.other-title{
-    margin: 3%;
-}
-.other-project-container{
+.other-project-container,
+.certificate-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border:solid 1px white;
+    margin-bottom: 5%;
 }
 
-.project-box{
+.other-title,
+.certificate-title{
+    margin: 3%;
+}
+
+.project-box,
+.certificate-box{
     display: grid;
     justify-content: space-between;
-    grid-template-columns: 25vw 25vw 25vw;
-    height: 50vh;
+    grid-template-columns: 22vw 22vw 22vw;
+    height: 44vh;
     column-gap: 2vw;
 }
 
 .box{
     border:solid 1px white;
+}
 
+.experience-container{
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+    border:solid 1px white;
+}
+
+.jobs-container{
+    display: flex;
+    justify-content: center;
+    gap:2%;
+    margin:2%;
+    border:1px solid white
+}
+
+.button-tile{
+    display: flex;
+    flex-direction: column;
+    width: 18%;
+}
+
+.job{
+    color:rgb(202, 171, 255);
+    background-color: transparent;
+    padding: 10%;
+    font-size: 1rem;
+    text-align: start;
+    border:none;
+    border-left:3px solid rgb(33, 0, 89);
+    cursor: pointer;
+    
+}
+
+.job:hover{
+    background-color: rgb(30, 2, 62);
+    color:rgb(201, 144, 255);
+}
+
+.job[aria-selected = "true"]{
+    color:rgb(201, 144, 255);
+    transition: border-left 0.3s ease-in-out;
+    border-left:3px solid rgb(183, 0, 255); 
+    background-color: rgb(30, 2, 62);
+    animation: borderMoveUpDown 0.3s ease-in-out forwards;
+}
+@keyframes borderMoveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.job-card{
+    width: 60%;
+}
+
+.job-title{
+    font-size: 23px
+}
+
+.job-time{
+    font-size: 1em;
+    margin:2%;
+}
+
+.arrow-text-container{
+    position: relative;
+    display: flex;
+    gap:1%;
+    margin: 4%;
+}
+.arrow {
+    position: relative;
+    width: 0;
+    height: 0;
+    top:7px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 6px solid rgb(93, 0, 255);
+}
+
+.contact-container{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    margin: 40px;
+}
+
+.contact-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin:2%;
+}
+.contact-description{
+    font-size: 1.3rem;
+    text-align: center;
+    width: 75%;
+}
+
+.contact-button{
+    position: relative;
+    background-color: #30155c00;
+    border:1px solid #782af5;
+    border-radius: 10px;
+    color:#a56dff;
+    font-size: 1.3rem;
+    width: 20%;
+    height: 70px;
+    margin: 10%;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-button:hover{
+    transform: translate(-10px, -10px);
+    box-shadow: 5px 5px #782af5;
 }
