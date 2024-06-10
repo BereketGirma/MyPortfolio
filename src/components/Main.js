@@ -78,7 +78,11 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.job[data-job="ITSolutions"]').click();
     };
 });
-
+    //Send email when clicked
+    const handleClick = (event) => {
+        event.preventDefault();
+        window.location.href = 'mailto:bereketgirma002@gmail.com';
+    };
 
 
 const About = ()=>{
@@ -99,7 +103,7 @@ const About = ()=>{
             </div>
 
             <div className="side-container right-side">
-                <p className="vertical-text">bereketgirma002@gmail.com</p>
+                <span className="vertical-text" onClick={handleClick}>bereketgirma002@gmail.com</span>
                 <div className="side-line"></div>
             </div>
             
@@ -116,7 +120,7 @@ const About = ()=>{
                         </p>
                     </div>
                 </div>
-                <div className="about-me-container">
+                <div className="about-me-container" id = "about">
                     <div className="about">
                         <div className="title"><h1>About me</h1></div>
                         <div className="title-line"></div>
@@ -135,7 +139,7 @@ const About = ()=>{
                     </div>
                 </div>
 
-                <div className="project-container">
+                <div className="project-container" id = "projects">
                     <div className="project">
                         <div className="title"><h1>Project</h1></div>
                         <div className="title-line"></div>
@@ -205,7 +209,7 @@ const About = ()=>{
                     </div>
                 </div>
 
-                <div className="experience-container">
+                <div className="experience-container" id = "experience">
                     <div className="experience">
                         <div className="title"><h1>Experience</h1></div>
                         <div className="title-line"></div>
@@ -226,13 +230,20 @@ const About = ()=>{
                 <div className="certificate-container">
                     <h1 className="certificate-title">Certificates</h1>
                     <div className="certificate-box">
-                        <img src = "" alt = "Certificate-one-Image" className="box certificate-1"/>
-                        <img src = "" alt = "Certificate-one-Image" className="box certificate-1"/>
-                        <img src = "" alt = "Certificate-one-Image" className="box certificate-1"/>
+                        <div className="certificate one">
+                            <p>This is certificate one</p>
+                            <img src = "" alt = "Certificate-one"/>
+                        </div>
+                        <div className="certificate two">
+                            <img src = "" alt = "Certificate-one"/>
+                        </div>
+                        <div className="certificate three">
+                            <img src = "" alt = "Certificate-one"/>
+                        </div>
                     </div>
                 </div>
 
-                <div className="contact-container">
+                <div className="contact-container" id ="contact">
                     <div className="contact">
                         <div className="title"><h1>Contact Me</h1></div>
                         <div className="title-line"></div>
@@ -240,10 +251,10 @@ const About = ()=>{
 
                     <div className="contact-content">
                         <div className="contact-description">
-                            <p>I am actively seeking new opportunities in software engineering. With a strong background in software development, problem-solving, and team collaboration, I am eager to contribute my skills to a dynamic team. Feel free to reach out to me at bereketgirma002@gmail.com </p>
+                            <p>I am actively seeking new internship opportunities in software engineering. With a strong background in software development, problem-solving, and team collaboration, I am eager to contribute my skills to a dynamic team. Feel free to reach out to me at bereketgirma002@gmail.com </p>
                         </div>
 
-                        <button className="contact-button">Say Hello!</button>
+                        <button className="contact-button" onClick={handleClick}>Say Hello!</button>
                     </div>
                 </div>
             </div>

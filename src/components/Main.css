@@ -36,6 +36,14 @@
     right: 0;
 }
 
+.vertical-text{
+    cursor: pointer;
+}
+
+.vertical-text:hover{
+    color:#a56dff
+}
+
 .side-line{
     width: 2px;
     height: 100px;
@@ -227,8 +235,7 @@ contains: intro,name,info
     margin: 3%;
 }
 
-.project-box,
-.certificate-box{
+.project-box{
     display: grid;
     justify-content: space-between;
     grid-template-columns: 22vw 22vw 22vw;
@@ -350,7 +357,7 @@ contains: intro,name,info
 .contact-button{
     position: relative;
     background-color: #30155c00;
-    border:1px solid #782af5;
+    border:2px solid #782af5;
     border-radius: 10px;
     color:#a56dff;
     font-size: 1.3rem;
@@ -358,9 +365,57 @@ contains: intro,name,info
     height: 70px;
     margin: 10%;
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .contact-button:hover{
     transform: translate(-10px, -10px);
     box-shadow: 5px 5px #782af5;
+}
+
+.certificate-box{
+    position: relative;
+    border: 1px solid white;
+    width: 100%;
+    height: 400px;
+    margin: 4%;
+}
+
+.certificate{
+    position: absolute;
+    width: 300px;
+    height: auto;
+    top: 50%;
+    left:50%;
+    background-color: grey;
+    border: 1px solid white;
+    border-radius: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.certificate.one{
+    height: 100%;
+    transform: translate(-50%, -50%) rotate(10deg);  
+}
+
+.certificate.two{
+    height: 100%;
+    transform: translate(-55%, -45%) rotate(5deg);  
+}
+
+.certificate.three{
+    height: 100%;
+    transform: translate(-60%, -40%) rotate(0deg);
+}
+
+.certificate-box:hover .one{
+    transform: translate(60%, -50%) rotate(0deg);
+}
+
+.certificate-box:hover .two{
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.certificate-box:hover .three{
+    transform: translate(-160%, -50%) rotate(0deg);
 }
