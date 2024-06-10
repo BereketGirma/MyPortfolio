@@ -8,21 +8,27 @@ const NavBar = () =>{
     setClicked(!clicked);
   }
   
-  const handleOption = () => {
-    setClicked(false);
+  const handleOption = (event) => {
+    event.preventDefault();
+    const targetId = event.currentTarget.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    if(targetElement){
+      window.scrollTo({
+        top: targetElement.offsetTop,
+        behavior: 'smooth'
+      })
+    }
   };
 
     return (
       <nav className="navbar">
         <h1 id = "heading1">Bereket Girma | Portifolio</h1>
         
-        <ul id = "navbar"
-            onClick={handleClick}
-            className={clicked ? "#navbar active" : "#navbar"}
-            >
-          <li><a href="#home" onClick={handleOption}>About</a></li>
-          <li><a href="#about" onClick={handleOption}>Projects</a></li>
-          <li><a href ="#projects" onClick={handleOption}>Work</a></li>
+        <ul id = "navbar">
+          <li><a href="#about" onClick={handleOption}>About</a></li>
+          <li><a href="#projects" onClick={handleOption}>Projects</a></li>
+          <li><a href ="#experience" onClick={handleOption}>Work</a></li>
           <li><a href="#contact" onClick={handleOption}>Contact</a></li>
         </ul>
 
