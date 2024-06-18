@@ -1,101 +1,162 @@
-import React from "react";
+import React, {useEffect, useState} from 'react';
 import './Main.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faGithub , faLinkedinIn} from '@fortawesome/free-brands-svg-icons';
 
-const jobDetail = {
-    'ITSolutions' : {
-        title: 'IT Student Consultant',
-        time: 'August 2023 - Present',
-        tasks:[
-            'Provided personalized IT solutions to students, faculty, and staff, addressing hardware and software issues.',
-            'Collaborated with cross-functional teams to troubleshoot and resolve technical problems promptly.'
-            ]
-        },
-    'MavPASS-CIS' : {
-        title: 'IT Student Consultant',
-        time: 'August 2023 - Present',
-        tasks:[
-            'Provided personalized IT solutions to students, faculty, and staff, addressing hardware and software issues.'
-            ]
-        },
-    'MavPASS-PHY' : {
-        title: 'IT Student Consultant',
-        time: 'August 2023 - Present',
-        tasks:[
-            'Provided personalized IT solutions to students, faculty, and staff, addressing hardware and software issues.',
-            'Collaborated with cross-functional teams to troubleshoot and resolve technical problems promptly.',
-            'Collaborated with cross-functional teams to troubleshoot and resolve technical problems promptly.'
-            ]
-        }
-}
-
-function showJobCard(event){
-    const buttons = document.querySelectorAll('.job')
-    buttons.forEach(button => {
-        button.setAttribute('aria-selected','false')
-    })
-    event.currentTarget.setAttribute('aria-selected','true')
-
-    const jobCard = document.getElementById('job-card');
-    if(jobCard){
-    const job = event.currentTarget.getAttribute('data-job');
-    const job_info = jobDetail[job]
-
-        if(job_info){
-            jobCard.querySelector('.job-title').textContent = job_info.title
-            jobCard.querySelector('.job-time').textContent = job_info.time
-
-            const existingContainer = jobCard.querySelectorAll('.arrow-text-container');
-            existingContainer.forEach(container => container.remove());
-
-            job_info.tasks.forEach(task => {
-                const container = document.createElement('div');
-                container.className = 'arrow-text-container';
-
-                const arrow = document.createElement('div');
-                arrow.className = 'arrow'
-
-                const taskElement = document.createElement('p');
-                taskElement.className = 'job-task'
-                taskElement.textContent = task;
-
-                container.appendChild(arrow);
-                container.appendChild(taskElement);
-                jobCard.appendChild(container);
-            });
-       } else {
-        console.error('Job information not found for:',job);
-       }
-    
-    } else {
-        console.error('Job information not found');
-    }
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    window.onload = function() {
-        document.querySelector('.job[data-job="ITSolutions"]').click();
-    };
-});
-    //Send email when clicked
-    const handleClick = (event) => {
-        event.preventDefault();
-        window.location.href = 'mailto:bereketgirma002@gmail.com';
-    };
-
 
 const About = ()=>{
+    const [clicked,setClicked] = useState(false);
+    const [scrollDirection, setScrollDirection] = useState('up');
+
+    const handleMenuClick = () =>{
+        setClicked(!clicked);
+    }
+
+    const handleOption = (event) => {
+        event.preventDefault();
+        const targetId = event.currentTarget.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if(targetElement){
+        window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: 'smooth'
+        })
+        }
+    };
+
+    useEffect(()=>{
+        let lastScrollTop = 0;
+
+        const handleScroll = () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop){
+                setScrollDirection('down');
+            }
+            else{
+                setScrollDirection('up');
+            }
+
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop //for mobile
+        }
+
+        window.addEventListener('scroll',handleScroll)
+
+        return() => {
+            window.removeEventListener('scroll',handleScroll)
+        };
+    },[])
+    const jobDetail = {
+        'ITSolutions' : {
+            title: 'IT Student Consultant',
+            time: 'August 2023 - Present',
+            tasks:[
+                'Provided personalized IT solutions to students, faculty, and staff, addressing hardware and software issues.',
+                'Collaborated with cross-functional teams to troubleshoot and resolve technical problems promptly.'
+                ]
+            },
+        'MavPASS-CIS' : {
+            title: 'IT Student Consultant',
+            time: 'August 2023 - Present',
+            tasks:[
+                'Provided personalized IT solutions to students, faculty, and staff, addressing hardware and software issues.'
+                ]
+            },
+        'MavPASS-PHY' : {
+            title: 'IT Student Consultant',
+            time: 'August 2023 - Present',
+            tasks:[
+                'Provided personalized IT solutions to students, faculty, and staff, addressing hardware and software issues.',
+                'Collaborated with cross-functional teams to troubleshoot and resolve technical problems promptly.',
+                'Collaborated with cross-functional teams to troubleshoot and resolve technical problems promptly.'
+                ]
+            }
+    }
+
+    function showJobCard(event){
+        const buttons = document.querySelectorAll('.job')
+        buttons.forEach(button => {
+            button.setAttribute('aria-selected','false')
+        })
+        event.currentTarget.setAttribute('aria-selected','true')
+
+        const jobCard = document.getElementById('job-card');
+        if(jobCard){
+        const job = event.currentTarget.getAttribute('data-job');
+        const job_info = jobDetail[job]
+
+            if(job_info){
+                jobCard.querySelector('.job-title').textContent = job_info.title
+                jobCard.querySelector('.job-time').textContent = job_info.time
+
+                const existingContainer = jobCard.querySelectorAll('.arrow-text-container');
+                existingContainer.forEach(container => container.remove());
+
+                job_info.tasks.forEach(task => {
+                    const container = document.createElement('div');
+                    container.className = 'arrow-text-container';
+
+                    const arrow = document.createElement('div');
+                    arrow.className = 'arrow'
+
+                    const taskElement = document.createElement('p');
+                    taskElement.className = 'job-task'
+                    taskElement.textContent = task;
+
+                    container.appendChild(arrow);
+                    container.appendChild(taskElement);
+                    jobCard.appendChild(container);
+                });
+        } else {
+            console.error('Job information not found for:',job);
+        }
+        
+        } else {
+            console.error('Job information not found');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        window.onload = function() {
+            document.querySelector('.job[data-job="ITSolutions"]').click();
+        };
+    });
+        //Send email when clicked
+        const handleClick = (event) => {
+            event.preventDefault();
+            window.location.href = 'mailto:bereketgirma002@gmail.com';
+        };
+
+
     return(
         <div className="page">
+            <nav className={`navbar ${scrollDirection === 'up' ? 'show':'hide'}`}>
+                <h1 id = "heading1">Bereket Girma | Portifolio</h1>
+                
+                <ul id = "navOptions">
+                <li><a href="#about" onClick={handleOption}>About</a></li>
+                <li><a href="#projects" onClick={handleOption}>Projects</a></li>
+                <li><a href ="#experience" onClick={handleOption}>Work</a></li>
+                <li><a href="#contact" onClick={handleOption}>Contact</a></li>
+                </ul>
+
+                <div id = "mobile"
+                onClick={handleMenuClick}>
+                    <i id = "bar"
+                    className={clicked ? "fas fa-times" : "fas fa-bars"}>
+                    </i>
+                </div>
+            </nav>
+
             <div className="side-container left-side">
                 <div className="linkedin-side-icon">
-                    <a href = "" target="_blank" rel = "noopener noreferrer">
+                    <a href = "https://www.linkedin.com/in/bereket-girma-154a56258/" target="_blank" rel = "noopener noreferrer">
                         <FontAwesomeIcon icon = {faLinkedinIn}/>
                     </a>
                 </div>
                 <div className="github-side-icon">
-                    <a href = "" target="_blank" rel="noopener noreferrer">
+                    <a href = "https://github.com/BereketGirma" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon = {faGithub} size = "2x"/>
                     </a>
                 </div>
@@ -116,7 +177,7 @@ const About = ()=>{
 
                     <div className="intro-container">
                         <p className="intro">Hi, I'm <span className="name">Bereket.</span>
-                        <p className="info">I'm currently rising Junior at Minnesota State University, Mankato <br/>majoring in Computer Science.</p>
+                        <p className="info">I'm currently rising Junior at Minnesota State University, Mankato majoring in Computer Science.</p>
                         </p>
                     </div>
                 </div>
@@ -150,13 +211,13 @@ const About = ()=>{
                             <img src = "" alt = "Project-one-Image" className="image one"/>
                             <div className="project-info right-info">
                                 <h4>Featured project</h4>
-                                <h1 className="project-title">project 1</h1>
+                                <h1 className="project-title">LobBot</h1>
                                 <div className="project-description right-desc">
-                                    <p>Information</p>
+                                    <p>LobBot is a vertisile Telegram bot developed using Telegram API. It enhances your Telegram experience by offering features such as searching for information, managing messages,sharing user status and more. Perfect for both practical tasks and entertainment, LOB-BOT makes interacting on Telegram more efficient and enjoyable.</p>
                                 </div>
-                                <h5>Coding softwares used</h5>
+                                <h5 className="softwares">TelegramAPI Python</h5>
                                 <div className="github-icon-container">
-                                    <a href = "" target="_blank" rel="noopener noreferrer">
+                                    <a href = "https://github.com/BereketGirma/LobBot" target="_blank" rel="noopener noreferrer">
                                         <FontAwesomeIcon icon = {faGithub} size = "2x"/>
                                     </a>
                                 </div>
