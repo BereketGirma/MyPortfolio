@@ -1,17 +1,24 @@
 import React, {useEffect, useState} from 'react';
 import './Main.css'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faGithub , faLinkedinIn} from '@fortawesome/free-brands-svg-icons';
 
+//-------------------icon imports--------------------------
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
+import {faGithub , faLinkedinIn} from '@fortawesome/free-brands-svg-icons'; 
+//---------------------------------------------------------
 
-const About = ()=>{
-    const [clicked,setClicked] = useState(false);
-    const [scrollDirection, setScrollDirection] = useState('up');
+const Main = ()=>{
 
+    const [clicked,setClicked] = useState(false); //clicked state
+    const [scrollDirection, setScrollDirection] = useState('up'); //scroll direction
+    // const [imgClicked, setImgClicked] = useState(false);
+    const [isVideoPlaying,setVideoPlaying] = useState(false);//video state
+
+    //changes clicked state when navbar elements are clicked
     const handleMenuClick = () =>{
         setClicked(!clicked);
     }
 
+    //handles scroll when navbar elements are clicked
     const handleOption = (event) => {
         event.preventDefault();
         const targetId = event.currentTarget.getAttribute('href').substring(1);
@@ -25,6 +32,22 @@ const About = ()=>{
         }
     };
 
+    // const handleOnOpenVideo = () => setImgClicked(true);
+    // const handleOnCloseVideo = () => setImgClicked(false); 
+
+    //handles when video is playing
+    const videoOpen = () => {
+        // console.log("Open",isVideoPlaying) ---for Debugging
+        setVideoPlaying(true);
+    };
+
+    //handles when video is closed
+    const videoClose = () => {
+        setVideoPlaying(false);
+    };
+
+    //handles scroll effect
+    //will show or hide navbar depending on direction of scroll 
     useEffect(()=>{
         let lastScrollTop = 0;
 
@@ -32,10 +55,10 @@ const About = ()=>{
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
             if (scrollTop > lastScrollTop){
-                setScrollDirection('down');
+                setScrollDirection('down'); //hides navbar when scrolling down
             }
             else{
-                setScrollDirection('up');
+                setScrollDirection('up'); //reveals navbar when scrolling up
             }
 
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop //for mobile
@@ -45,8 +68,10 @@ const About = ()=>{
 
         return() => {
             window.removeEventListener('scroll',handleScroll)
-        };
-    },[])
+        };},[])
+
+    
+    //--------------------Job Description-----------------------------------
     const jobDetail = {
         'ITSolutions' : {
             title: 'IT Student Consultant',
@@ -73,26 +98,34 @@ const About = ()=>{
                 ]
             }
     }
+    //-------------------------------------------------------------------------
 
+
+    //Shows each job card upon selection
     function showJobCard(event){
-        const buttons = document.querySelectorAll('.job')
+        const buttons = document.querySelectorAll('.job')//grab job element
+        //set other button aria-selected elements to false
         buttons.forEach(button => {
             button.setAttribute('aria-selected','false')
         })
-        event.currentTarget.setAttribute('aria-selected','true')
+        event.currentTarget.setAttribute('aria-selected','true')//set button attribute to true
 
-        const jobCard = document.getElementById('job-card');
+        const jobCard = document.getElementById('job-card');//grav job-card element
+
         if(jobCard){
-        const job = event.currentTarget.getAttribute('data-job');
-        const job_info = jobDetail[job]
+        const job = event.currentTarget.getAttribute('data-job');//grab data-job element
+        const job_info = jobDetail[job]//find the correct information from jobDetails dictionary
 
+            //if the job_info exists display those elements
             if(job_info){
-                jobCard.querySelector('.job-title').textContent = job_info.title
-                jobCard.querySelector('.job-time').textContent = job_info.time
+                jobCard.querySelector('.job-title').textContent = job_info.title //add title
+                jobCard.querySelector('.job-time').textContent = job_info.time //add the time worked
 
-                const existingContainer = jobCard.querySelectorAll('.arrow-text-container');
+                const existingContainer = jobCard.querySelectorAll('.arrow-text-container'); //arrow icons
                 existingContainer.forEach(container => container.remove());
-
+                
+                //for loop through the info
+                //add each task with its own arrow element
                 job_info.tasks.forEach(task => {
                     const container = document.createElement('div');
                     container.className = 'arrow-text-container';
@@ -109,30 +142,34 @@ const About = ()=>{
                     jobCard.appendChild(container);
                 });
         } else {
-            console.error('Job information not found for:',job);
+            console.error('Job information not found for:',job);//Debugging
         }
         
         } else {
-            console.error('Job information not found');
+            console.error('Job information not found');//Debugging
         }
     }
+    
+    //when window is loaded it will trigger the first job to show its details
+    window.onload = function() {
+        console.log("Reloaded")
+        document.querySelector('.job[data-job="ITSolutions"]').click();
+    };
 
-    document.addEventListener('DOMContentLoaded', function() {
-        window.onload = function() {
-            document.querySelector('.job[data-job="ITSolutions"]').click();
-        };
-    });
-        //Send email when clicked
-        const handleClick = (event) => {
-            event.preventDefault();
-            window.location.href = 'mailto:bereketgirma002@gmail.com';
-        };
-
+    //Send email when clicked
+    const handleClick = (event) => {
+        event.preventDefault();
+        window.location.href = 'mailto:bereketgirma002@gmail.com';
+    };
+    
 
     return(
+        //-----------This is Main Page-------------
         <div className="page">
+
+            {/* navbar element */}
             <nav className={`navbar ${scrollDirection === 'up' ? 'show':'hide'}`}>
-                <h1 id = "heading1">Bereket Girma | Portifolio</h1>
+                <h1 id = "heading1">Bereket Girma | Portfolio</h1>
                 
                 <ul id = "navOptions">
                 <li><a href="#about" onClick={handleOption}>About</a></li>
@@ -141,6 +178,7 @@ const About = ()=>{
                 <li><a href="#contact" onClick={handleOption}>Contact</a></li>
                 </ul>
 
+                {/* mobile version of navbar */}
                 <div id = "mobile"
                 onClick={handleMenuClick}>
                     <i id = "bar"
@@ -149,6 +187,7 @@ const About = ()=>{
                 </div>
             </nav>
 
+            {/*------------------------ side elements ----------------------*/}
             <div className="side-container left-side">
                 <div className="linkedin-side-icon">
                     <a href = "https://www.linkedin.com/in/bereket-girma-154a56258/" target="_blank" rel = "noopener noreferrer">
@@ -168,7 +207,14 @@ const About = ()=>{
                 <div className="side-line"></div>
             </div>
             
+            {/* ------------------------------------------------------------ */}
+
+
+            {/* Container for all elements that are under the navbar */}
             <div className="main">
+
+                {/*----------------------- About section -----------------------*/}
+
                 <div className="about-container">
                     <div className="circle-container">
                         <div className="circle"></div>
@@ -199,6 +245,9 @@ const About = ()=>{
                         </div>
                     </div>
                 </div>
+                {/* ------------------------------------------------------------- */}
+
+                {/*--------------------- Project container----------------------- */}
 
                 <div className="project-container" id = "projects">
                     <div className="project">
@@ -208,12 +257,37 @@ const About = ()=>{
 
                     <div className="projects-container">
                         <div className="project-card">
-                            <img src = "" alt = "Project-one-Image" className="image one"/>
+                            <div className='imgContainer' onClick={videoOpen}>
+                                    <img 
+                                        src = {require("./Images/projectBG.webp")} 
+                                        alt = "" 
+                                        className="image one" 
+                                    />
+                                    <p className='videoDemo'>Click image to view demo!</p>
+
+                                    {isVideoPlaying &&(
+                                        <div className='video-overlay'>
+                                            <div className='video-content' onClick={(e) => e.stopPropagation()}>
+                                                <span className='close-button' onClick={videoClose}>&times;</span>
+                                                <video width='100%' autoPlay controls>
+                                                    <source src= {require("./Images/PortfolioDemo.mp4")} type = 'video/mp4'/>
+                                                    Your browser doesn't support this video tag.
+                                                </video>
+                                            </div>
+                                        </div>
+                                    )} 
+                                
+                            </div>
+
                             <div className="project-info right-info">
                                 <h4>Featured project</h4>
                                 <h1 className="project-title">LobBot</h1>
                                 <div className="project-description right-desc">
-                                    <p>LobBot is a vertisile Telegram bot developed using Telegram API. It enhances your Telegram experience by offering features such as searching for information, managing messages,sharing user status and more. Perfect for both practical tasks and entertainment, LOB-BOT makes interacting on Telegram more efficient and enjoyable.</p>
+                                    <p>
+                                        LobBot is a vertisile Telegram bot developed using Telegram API. 
+                                        It enhances your Telegram experience by offering features such as searching for information, managing messages,sharing user status and more. 
+                                        Perfect for both practical tasks and enjoyment, LOB-BOT makes interacting on Telegram more efficient and enjoyable.
+                                    </p>
                                 </div>
                                 <h5 className="softwares">TelegramAPI Python</h5>
                                 <div className="github-icon-container">
@@ -238,11 +312,42 @@ const About = ()=>{
                                     </a>
                                 </div>
                             </div>
-                            <img src = "" alt = "Project-one-Image" className="image one"/>
+                            
+                            <div className='imgContainer' onClick={videoOpen} >
+                                <img 
+                                    src = {require("./Images/projectBG.webp")} 
+                                    alt = "" 
+                                    className="image one" 
+                                />
+                                    <p className='videoDemo'>Click image to view demo!</p>
+
+
+                                {isVideoPlaying &&(
+                                    <div className='video-overlay' >
+                                        <div className='video-content' onClick={(e) => e.stopPropagation()}>
+                                            <span className='close-button' onClick={videoClose}>&times;</span>
+                                            <video width='100%' autoPlay controls>
+                                                <source src= {require("./Images/PortfolioDemo.mp4")} type = 'video/mp4'/>
+                                                Your browser doesn't support this video tag.
+                                            </video>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+
                         </div>
 
                         <div className="project-card">
-                            <img src = "" alt = "Project-one-Image" className="image one"/>
+                            
+                            <div className='imgContainer'>
+                                <img 
+                                    src = {require("./Images/projectBG.webp")} 
+                                    alt = "" 
+                                    className="image one" 
+                                    onClick={videoOpen}
+                                />
+                            </div>
+
                             <div className="project-info right-info">
                                 <h4>Featured project</h4>
                                 <h1 className="project-title">project 1</h1>
@@ -256,11 +361,15 @@ const About = ()=>{
                                     </a>
                                 </div>
                             </div>
+
                         </div>
 
                     </div>
                 </div>
 
+                {/* ------------------------------------------------------------- */}
+
+                {/*----------------- Other Project container -------------------- */}
                 <div className="other-project-container">
                     <h1 className="other-title">Other projects</h1>
                     <div className="project-box">
@@ -270,6 +379,9 @@ const About = ()=>{
                     </div>
                 </div>
 
+                {/* ------------------------------------------------------------ */}
+                
+                {/*--------------------- Experience container----------------------- */}
                 <div className="experience-container" id = "experience">
                     <div className="experience">
                         <div className="title"><h1>Experience</h1></div>
@@ -288,22 +400,28 @@ const About = ()=>{
                     </div>
                 </div>
 
+                {/* ------------------------------------------------------------- */}
+
+                {/*--------------------- Certificate container----------------------- */}
                 <div className="certificate-container">
                     <h1 className="certificate-title">Certificates</h1>
                     <div className="certificate-box">
                         <div className="certificate one">
-                            <p>This is certificate one</p>
-                            <img src = "" alt = "Certificate-one"/>
+                            <p>This is certificate 1</p>
+                            <img src = {require("./Images/certificate1.webp")} alt = "Image not found"/>
                         </div>
                         <div className="certificate two">
-                            <img src = "" alt = "Certificate-one"/>
+                            <img src = {require("./certificate-test.png")} alt = "Image Not Found"/>
                         </div>
                         <div className="certificate three">
-                            <img src = "" alt = "Certificate-one"/>
+                            <img src = {require("./Images/certificate1.webp")} alt = "Image Not Found"/>
                         </div>
                     </div>
                 </div>
 
+                {/* ------------------------------------------------------------- */}
+
+                {/*--------------------- Contact container----------------------- */}
                 <div className="contact-container" id ="contact">
                     <div className="contact">
                         <div className="title"><h1>Contact Me</h1></div>
@@ -318,9 +436,12 @@ const About = ()=>{
                         <button className="contact-button" onClick={handleClick}>Say Hello!</button>
                     </div>
                 </div>
+
+                {/* ------------------------------------------------------------- */}
+
             </div>
         </div>
     )
 }
 
-export default About;
+export default Main;
