@@ -10,8 +10,37 @@ const Main = ()=>{
 
     const [clicked,setClicked] = useState(false); //clicked state
     const [scrollDirection, setScrollDirection] = useState('up'); //scroll direction
-    // const [imgClicked, setImgClicked] = useState(false);
-    const [isVideoPlaying,setVideoPlaying] = useState(false);//video state
+
+    //project video demos
+    const videoList = {
+        'project1' : {
+            videoSrc: require("./VideoDemo/Test2.mp4")
+        },
+        'project2' : {
+            videoSrc: require("./VideoDemo/PortfolioDemo.mp4")
+        }
+    }
+
+    const[isVideoPlaying,setVideoPlaying] = useState(false);
+    const [currentVideoSrc, setCurrentVideoSrc] = useState("");
+
+    //handles when video is playing
+    const videoOpen = (projectNums) => {
+        if(!isVideoPlaying){
+            const projectVideoSrc = videoList[projectNums].videoSrc;
+            setCurrentVideoSrc(projectVideoSrc);
+            setVideoPlaying(true);
+        }
+    };
+
+    //handles when video is closed
+    const videoClose = () => {
+        if(isVideoPlaying){
+            setVideoPlaying(false);
+            setCurrentVideoSrc('');
+        }
+    };
+    
 
     //changes clicked state when navbar elements are clicked
     const handleMenuClick = () =>{
@@ -35,16 +64,6 @@ const Main = ()=>{
     // const handleOnOpenVideo = () => setImgClicked(true);
     // const handleOnCloseVideo = () => setImgClicked(false); 
 
-    //handles when video is playing
-    const videoOpen = () => {
-        // console.log("Open",isVideoPlaying) ---for Debugging
-        setVideoPlaying(true);
-    };
-
-    //handles when video is closed
-    const videoClose = () => {
-        setVideoPlaying(false);
-    };
 
     //handles scroll effect
     //will show or hide navbar depending on direction of scroll 
@@ -68,7 +87,7 @@ const Main = ()=>{
 
         return() => {
             window.removeEventListener('scroll',handleScroll)
-        };},[])
+        };},[scrollDirection])
 
     
     //--------------------Job Description-----------------------------------
@@ -151,11 +170,13 @@ const Main = ()=>{
     }
     
     //when window is loaded it will trigger the first job to show its details
-    window.onload = function() {
-        console.log("Reloaded")
-        document.querySelector('.job[data-job="ITSolutions"]').click();
-    };
-
+    // window.onload = function() {
+    //     console.log("Reloaded")
+    //     document.querySelector('.job[data-job="ITSolutions"]').click();
+    // };
+    useEffect(() => {
+        document.querySelector('.job[data-job = "ITSolutions').click();
+    })
     //Send email when clicked
     const handleClick = (event) => {
         event.preventDefault();
@@ -241,7 +262,7 @@ const Main = ()=>{
                         </div>
 
                         <div className="about-image-container">
-                                <img src = "" alt="About-Image" className="about-image"/>
+                                <img src = "" alt="About" className="about-image"/>
                         </div>
                     </div>
                 </div>
@@ -257,26 +278,13 @@ const Main = ()=>{
 
                     <div className="projects-container">
                         <div className="project-card">
-                            <div className='imgContainer' onClick={videoOpen}>
+                            <div className='imgContainer' onClick={() => videoOpen("project1")}>
                                     <img 
-                                        src = {require("./Images/projectBG.webp")} 
+                                        src = {require("./Images/Project Images/projectBG.webp")} 
                                         alt = "" 
                                         className="image one" 
                                     />
                                     <p className='videoDemo'>Click image to view demo!</p>
-
-                                    {isVideoPlaying &&(
-                                        <div className='video-overlay'>
-                                            <div className='video-content' onClick={(e) => e.stopPropagation()}>
-                                                <span className='close-button' onClick={videoClose}>&times;</span>
-                                                <video width='100%' autoPlay controls>
-                                                    <source src= {require("./Images/PortfolioDemo.mp4")} type = 'video/mp4'/>
-                                                    Your browser doesn't support this video tag.
-                                                </video>
-                                            </div>
-                                        </div>
-                                    )} 
-                                
                             </div>
 
                             <div className="project-info right-info">
@@ -307,32 +315,19 @@ const Main = ()=>{
                                 </div>
                                 <h5>Coding softwares used</h5>
                                 <div className="github-icon-container">
-                                    <a href = "" target="_blank" rel="noopener noreferrer">
+                                    <a href = "example.com" target="_blank" rel="noopener noreferrer">
                                         <FontAwesomeIcon icon = {faGithub} size = "2x"/>
                                     </a>
                                 </div>
                             </div>
                             
-                            <div className='imgContainer' onClick={videoOpen} >
+                            <div className='imgContainer' onClick={() => videoOpen("project2")} >
                                 <img 
-                                    src = {require("./Images/projectBG.webp")} 
+                                    src = {require("./Images/Project Images/projectBG.webp")} 
                                     alt = "" 
                                     className="image one" 
                                 />
                                     <p className='videoDemo'>Click image to view demo!</p>
-
-
-                                {isVideoPlaying &&(
-                                    <div className='video-overlay' >
-                                        <div className='video-content' onClick={(e) => e.stopPropagation()}>
-                                            <span className='close-button' onClick={videoClose}>&times;</span>
-                                            <video width='100%' autoPlay controls>
-                                                <source src= {require("./Images/PortfolioDemo.mp4")} type = 'video/mp4'/>
-                                                Your browser doesn't support this video tag.
-                                            </video>
-                                        </div>
-                                    </div>
-                                )}
                             </div>
 
                         </div>
@@ -341,10 +336,9 @@ const Main = ()=>{
                             
                             <div className='imgContainer'>
                                 <img 
-                                    src = {require("./Images/projectBG.webp")} 
+                                    src = {require("./Images/Project Images/projectBG.webp")} 
                                     alt = "" 
                                     className="image one" 
-                                    onClick={videoOpen}
                                 />
                             </div>
 
@@ -356,13 +350,25 @@ const Main = ()=>{
                                 </div>
                                 <h5>Coding softwares used</h5>
                                 <div className="github-icon-container">
-                                    <a href = "" target="_blank" rel="noopener noreferrer">
+                                    <a href = "example.com" target="_blank" rel="noopener noreferrer">
                                         <FontAwesomeIcon icon = {faGithub} size = "2x"/>
                                     </a>
                                 </div>
                             </div>
 
                         </div>
+
+                        {isVideoPlaying &&(
+                            <div className='video-overlay'>
+                                <div className='video-content' onClick={(e) => e.stopPropagation()}>
+                                    <span className='close-button' onClick={videoClose}>&times;</span>
+                                    <video width='100%' autoPlay controls
+                                        src = {currentVideoSrc}
+                                        >
+                                    </video>
+                                </div>
+                            </div>
+                        )} 
 
                     </div>
                 </div>
@@ -407,14 +413,27 @@ const Main = ()=>{
                     <h1 className="certificate-title">Certificates</h1>
                     <div className="certificate-box">
                         <div className="certificate one">
-                            <p>This is certificate 1</p>
-                            <img src = {require("./Images/certificate1.webp")} alt = "Image not found"/>
+                            <p>MavPASS PHYS-211</p>
+                            <img 
+                                src = {require("./Images/Certificate Images/MavPASS-PHYS211.jpg")} 
+                                alt = "Not found" 
+                            />
                         </div>
+                        
                         <div className="certificate two">
-                            <img src = {require("./certificate-test.png")} alt = "Image Not Found"/>
+                            <p>MavPASS CIS-121</p>
+                            <img 
+                                src = {require("./Images/Certificate Images/MavPASS-CIS121.jpg")} 
+                                alt = "Not Found"
+                            />
                         </div>
+                               
                         <div className="certificate three">
-                            <img src = {require("./Images/certificate1.webp")} alt = "Image Not Found"/>
+                            <p>CodePath AND-101</p>
+                            <img 
+                                src = {require("./Images/Certificate Images/CodePath-AND101-Certificate.jpg")} 
+                                alt = "Not Found"
+                            />
                         </div>
                     </div>
                 </div>

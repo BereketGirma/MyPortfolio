@@ -5,9 +5,8 @@
     width: auto;
 }
 
+/* ----------------Custom scroll bar------------------ */
 :root{
-    --scrollbar-width:50px;
-    --scrollbar-height:50px;
     --scrollbar-bg: rgb(34, 3, 52);
     --scrollbar-thumb : rgb(161, 13, 247);
     --scrollbar-thumb-hover : rgb(255, 255, 255);
@@ -33,14 +32,18 @@ html {
     scrollbar-width: thin;
     scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg);
   }
+/* --------------------------------------------------- */
 
+/* ------------------Main page------------------------ */
 .page{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+/* --------------------------------------------------- */
 
+/*--------------------NavBar---------------------------*/
 .navbar{
     display: flex;
     position: fixed;
@@ -149,7 +152,10 @@ transform: translateY(-100%);
 .navbar.show {
     transform: translateY(0);
 }
+/*-------------------------------------------------*/
 
+/*----------------------Main-----------------------*/
+/*Contains everything under the navbar*/
 .main{
     display: flex;
     position: relative;
@@ -158,6 +164,7 @@ transform: translateY(-100%);
     width: 80%;
 }
 
+/*Side icons and text*/
 .side-container{
     position: fixed;
     display: flex;
@@ -198,6 +205,10 @@ transform: translateY(-100%);
     writing-mode: vertical-rl;
     margin: 30px;
 }
+/*-------------------------------------------------*/
+
+
+/*------------------About Section------------------*/
 /*
 layout for the about contianer
 contains: circle-container,intro-container
@@ -308,7 +319,10 @@ contains: intro,name,info
     width: 40%;
     justify-content: center;
 }
+/*-------------------------------------------------*/
 
+
+/*---------------Project Section-------------------*/
 
 .project-container{
     display: flex;
@@ -439,7 +453,10 @@ contains: intro,name,info
 .right-desc{
     justify-content: right;
 }
+/*-------------------------------------------------*/
 
+
+/*--------------------Other project----------------*/
 .other-project-container,
 .certificate-container{
     display: flex;
@@ -464,6 +481,9 @@ contains: intro,name,info
 .box{
     border:solid 1px white;
 }
+/*-------------------------------------------------*/
+
+/*-----------Experience Section--------------------*/
 
 .experience-container{
     display: flex;
@@ -551,6 +571,130 @@ contains: intro,name,info
     border-left: 6px solid rgb(93, 0, 255);
 }
 
+
+/*-------------------------------------------------*/
+
+/*-----------------Certificate Section-------------*/
+.certificate-box{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin: 4%;
+}
+
+.certificate{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 300px;
+    height: auto;
+    padding: 1%;
+    background-color: #090116;
+    top: 50%;
+    left:50%;
+    border: 2px solid rgb(49, 11, 119);
+    border-radius: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.certificate.one{
+    height: 100%;
+    transform: translate(-50%, -50%) rotate(10deg);  
+}
+.certificate img{
+    height: auto;
+    width: 300px;
+}
+.certificate.two{
+    height: 100%;
+    transform: translate(-55%, -45%) rotate(5deg);  
+}
+
+.certificate.three{
+    height: 100%;
+    transform: translate(-60%, -40%) rotate(0deg);
+}
+
+.certificate-box:hover .one{
+    transform: translate(60%, -50%) rotate(0deg);
+}
+
+.certificate-box:hover .two{
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.certificate-box:hover .three{
+    transform: translate(-160%, -50%) rotate(0deg);
+}
+
+.image-overlay{
+    position: fixed;
+    top:0;
+    right:0;
+    left:0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.image-content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: rgba(151, 151, 151, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.image-content img{
+    width: 50%;
+    height: 50%;
+}
+
+.image-content p{
+    text-align: center;
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+.close-image{
+    position: absolute;
+    top:10px;
+    right:10px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+} 
+
+/* .videoDemo{
+    position: absolute;
+    color:white;
+    background: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    opacity: 0;
+    transition: 0.3s;
+} */
+/*-------------------------------------------------*/
+
+
+/*-------------Contact Section---------------------*/
 .contact-container{
     display: flex;
     position: relative;
@@ -590,55 +734,5 @@ contains: intro,name,info
     transform: translate(-10px, -10px);
     box-shadow: 5px 5px #782af5;
 }
+/*-------------------------------------------------*/
 
-.certificate-box{
-    position: relative;
-    border: 1px solid white;
-    width: 100%;
-    height: 400px;
-    margin: 4%;
-}
-
-.certificate{
-    position: absolute;
-    width: 300px;
-    height: auto;
-    padding: 1%;
-    background-color: #090116;
-    top: 50%;
-    left:50%;
-    border: 1px solid white;
-    border-radius: 20px;
-    transition: transform 0.5s ease-in-out;
-}
-
-.certificate.one{
-    height: 100%;
-    transform: translate(-50%, -50%) rotate(10deg);  
-}
-.certificate img{
-    height: auto;
-    width: 300px;
-    border: 1px white;
-}
-.certificate.two{
-    height: 100%;
-    transform: translate(-55%, -45%) rotate(5deg);  
-}
-
-.certificate.three{
-    height: 100%;
-    transform: translate(-60%, -40%) rotate(0deg);
-}
-
-.certificate-box:hover .one{
-    transform: translate(60%, -50%) rotate(0deg);
-}
-
-.certificate-box:hover .two{
-    transform: translate(-50%, -50%) rotate(0deg);
-}
-
-.certificate-box:hover .three{
-    transform: translate(-160%, -50%) rotate(0deg);
-}
