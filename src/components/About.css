@@ -1,0 +1,106 @@
+.about-container{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 9%;
+
+}
+.iconIntro-container{
+    position: relative;
+    display: flex;
+}
+
+.circle-container{
+    display: flex;
+    margin-top: 60px;
+    margin-left: 20px;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    width: 2%;
+    
+}
+/*design for the circle*/
+.circle{
+    border-radius: 50%;
+    background-color: #5d00f3;
+    width: 25px;
+    height: 25px;
+}
+/*design for the line*/
+.line{
+    width:6px;
+    height: 200px;
+    background: linear-gradient(to bottom, #5d00f3,#3100b600);
+}
+
+/*
+layout for the line-contianer
+contains: intro,name,info
+*/
+.intro-container{
+    margin:20px;
+    position: relative;
+}
+
+.intro{
+    color:#ffffff;
+    font-size: 75px;
+    font-weight: bolder;
+}
+
+.name{
+    color:blueviolet
+}
+
+.info{
+    font-size: 32px;
+    font-style: normal;
+    font-weight: light;
+}
+
+.about-me-container{
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+}
+
+.about{
+    align-items: center;
+    display: flex;
+    justify-content:flex-start;
+    font-size: 1.5em;
+    margin: 2%;
+}
+
+.title{
+    padding-left: 40px;
+    padding-right: 10px;
+}
+
+.title-line{
+    position: relative;
+    width:40%;
+    height: 2px;
+    background:rgb(138, 106, 255);
+    top:10px;
+}
+
+.about-content{
+    display: flex;
+    position: relative;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.description{
+    width: 50%;
+    font-size: 1.4rem;
+}
+
+.about-image-container{
+    position: relative;
+    display: flex;
+    width: 40%;
+    justify-content: center;
+}
