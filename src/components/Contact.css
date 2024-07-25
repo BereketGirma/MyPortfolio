@@ -1,0 +1,48 @@
+.contact-container{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    margin: 40px;
+    width: 60%;
+}
+
+.contact{
+    align-items: center;
+    display: flex;
+    justify-content:flex-start;
+    font-size: 1.5em;
+    margin: 2%;
+}
+
+.contact-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin:2%;
+}
+.contact-description{
+    font-size: 1.3rem;
+    text-align: center;
+    width: 75%;
+}
+
+.contact-button{
+    position: relative;
+    background-color: #30155c00;
+    border:2px solid #782af5;
+    border-radius: 10px;
+    color:#a56dff;
+    font-size: 1.3rem;
+    width: 20%;
+    height: 70px;
+    margin: 10%;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.contact-button:hover{
+    transform: translate(-10px, -10px);
+    box-shadow: 5px 5px #782af5;
+}

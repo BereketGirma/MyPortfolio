@@ -1,10 +1,9 @@
 body{
-    height: 100vh;
     margin:0;
     padding:0;
     background-image: url('./backgroundImg.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: rgb(5, 6, 20);
+    background-attachment: fixed;
 }
