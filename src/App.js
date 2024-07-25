@@ -7,7 +7,6 @@ import Contact from './components/Contact';
 import Main from './components/Main';
 import './App.css';
 
-import { useEffect } from 'react';
 
 function App() {
   return (

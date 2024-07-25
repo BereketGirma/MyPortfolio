@@ -138,14 +138,14 @@ const Project = () => {
                         </div>
                     )} 
 
-                    <div className="other-project-container">
+                    {/* <div className="other-project-container">
                         <h1 className="other-title">Other projects</h1>
                         <div className="other-project-box">
                             <div className="box item-1">Hello</div>
                             <div className="box item-2">Hello</div>
                             <div className="box item-3">Hello</div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         
