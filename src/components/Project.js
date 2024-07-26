@@ -48,7 +48,7 @@ const Project = () => {
                     <div className="project-card">
                         <div className='imgContainer' onClick={() => videoOpen("project1")}>
                                 <img 
-                                    src = {require("./Images/Project Images/projectBG.webp")} 
+                                    src = {require("./Images/Project Images/LobBot.png")} 
                                     alt = "" 
                                     className="image one" 
                                 />
@@ -77,11 +77,14 @@ const Project = () => {
                     <div className="project-card">
                         <div className="project-info left-info">
                             <h4>Featured project</h4>
-                            <h1 className="project-title">project 1</h1>
+                            <h1 className="project-title">Maverick Maps</h1>
                             <div className="project-description left desc">
-                                <p>Information</p>
+                                <p>
+                                    Maverick Maps is a tool that is built for students, faculty, staff and vistors to have an easier time navigating through the campus of Minnesota State University,Mankato.
+                                    It is an app built with React-Native along side Unity which displays a 3D Map of the campus layout. It is an easy access tool with user friendly UI design. This app is currently in progress.
+                                </p>
                             </div>
-                            <h5>Coding softwares used</h5>
+                            <h5 className="softwares">TypeScript Swift Java React-Native Unity Android-Studio Xcode</h5>
                             <div className="github-icon-container">
                                 <a href = "example.com" target="_blank" rel="noopener noreferrer">
                                     <FontAwesomeIcon icon = {faGithub} size = "2x"/>

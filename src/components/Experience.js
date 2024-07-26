@@ -84,11 +84,6 @@ const Experience = () => {
     useEffect(() => {
         document.querySelector('.job[data-job = "ITSolutions').click();
     })
-    //Send email when clicked
-    const handleClick = (event) => {
-        event.preventDefault();
-        window.location.href = 'mailto:bereketgirma002@gmail.com';
-    };
 
     return(
         <div className="experience-container" id = "experience">

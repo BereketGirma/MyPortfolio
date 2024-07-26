@@ -83,6 +83,10 @@
     gap:1%;
     margin: 4%;
 }
+
+.job-task{
+    font-size: 1em;
+}
 .arrow {
     position: relative;
     width: 0;

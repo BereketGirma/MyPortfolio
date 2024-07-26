@@ -21,19 +21,27 @@
     justify-content: space-evenly;
     margin: 4%;
 }
-
+/* 690px,450px */
 .imgContainer{
+    border:1px solid #552fff;
+    border-radius: 15px;
     position: relative;
     display: flex;
     width: 50%;
+    height: 470px;
     cursor: pointer;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 .project-card img {
+    position: absolute;
     width: 100%;
-    height: auto;
+    height: 100%;
+    top:0;
+    left:0  ;
     z-index: -1;
+    object-fit: fill;
 }
 
 .video-overlay{
