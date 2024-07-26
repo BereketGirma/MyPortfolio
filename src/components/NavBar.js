@@ -37,8 +37,8 @@ const NavBar = () => {
                 <li><a href="#contact" onClick={handleOption}>Contact</a></li>
                 </ul>
 
-                {/* mobile version of navbar */}
-                <div id = "mobile" onClick={handleMenuClick}>
+                {/* mobile version of menu */}
+                <div id = "menu" onClick={handleMenuClick}>
                     <i className={`fas ${clicked ? "fa-times" : "fa-bars"} bar`}></i>
                 </div>
             </nav>
