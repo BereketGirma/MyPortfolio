@@ -28,16 +28,16 @@
     position: relative;
     display: flex;
     width: 50%;
-    height: 470px;
+    height: 45vh;
     cursor: pointer;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    z-index: -1;
 }
 .project-card img {
-    position: absolute;
+    position: flex;
     width: 100%;
-    height: 100%;
     top:0;
     left:0  ;
     z-index: -1;

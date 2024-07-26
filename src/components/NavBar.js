@@ -11,6 +11,7 @@ const NavBar = () => {
 
     //handles scroll when navbar elements are clicked
     const handleOption = (event) => {
+        setClicked(false);
         event.preventDefault();
         const targetId = event.currentTarget.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
@@ -29,7 +30,7 @@ const NavBar = () => {
             <nav className={`navbar`}>
                 <h1 id = "heading1">Bereket Girma | Portfolio</h1>
                 
-                <ul id = "navOptions">
+                <ul id = 'navOptions' className={`navOptions ${clicked? 'active' : ''}`}>
                 <li><a href="#about" onClick={handleOption}>About</a></li>
                 <li><a href="#projects" onClick={handleOption}>Projects</a></li>
                 <li><a href ="#experience" onClick={handleOption}>Work</a></li>
@@ -37,11 +38,8 @@ const NavBar = () => {
                 </ul>
 
                 {/* mobile version of navbar */}
-                <div id = "mobile"
-                onClick={handleMenuClick}>
-                    <i id = "bar"
-                    className={clicked ? "fas fa-times" : "fas fa-bars"}>
-                    </i>
+                <div id = "mobile" onClick={handleMenuClick}>
+                    <i className={`fas ${clicked ? "fa-times" : "fa-bars"} bar`}></i>
                 </div>
             </nav>
         </div>
