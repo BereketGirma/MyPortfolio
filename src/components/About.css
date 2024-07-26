@@ -62,6 +62,7 @@ contains: intro,name,info
 .about-me-container{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin: 40px;
 }
 
@@ -94,6 +95,7 @@ contains: intro,name,info
 }
 
 .description{
+    flex:1;
     width: 50%;
     font-size: 1.4rem;
 }
@@ -103,4 +105,77 @@ contains: intro,name,info
     display: flex;
     width: 40%;
     justify-content: center;
+}
+.about-image{
+    width: 100%;
+    height: auto;
+}
+
+#about-content{
+    display: none;
+}
+
+@media screen and (max-width: 500px) {
+    .about-container{
+        width: 100%;
+    }
+    .circle{
+        width: 15px;
+        height: 15px;
+    }
+    .line{
+        width:4px;
+    }
+    .intro-container{
+        margin-top:40px;
+    }
+    .intro{
+        font-size: 30px;
+    }
+    .info{
+        margin-top: 5px;
+        font-size: 25px;
+    }
+
+    .about-me-container{
+        margin: 20px;
+        width: 100%;
+    }
+    .about{
+        font-size: 20px;
+    }
+    .title{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .title-line{
+        top:7px;
+    }
+
+    .about-content{
+        display: none;
+    }
+
+    #about-content{
+       display: block;
+       position: relative;
+       justify-content: center;
+       border:white 1px solid;
+       width: 90%; 
+    }
+
+    #description{
+        width: 100%;
+    }
+
+    #about-image{
+        float:right;
+        width: 150px;
+        height: auto;
+        margin-left: 5px;
+        margin-bottom: 5px;
+        display: block;
+    }
+
 }

@@ -31,9 +31,31 @@ const About = () => {
                     </div>
 
                     <div className="about-image-container">
-                            <img src = "" alt="About" className="about-image"/>
+                        <img 
+                            src = {require("./Images/Project Images/projectBG.webp")} 
+                            alt="About" 
+                            className="about-image"
+                            />
                     </div>
                 </div>
+
+                {/* mobile version of image */}
+                <div id = "about-content">
+                    <div id="description">
+                        <img 
+                            src = {require("./Images/Project Images/projectBG.webp")} 
+                            alt="About" 
+                            id="about-image"
+                            />
+                        <p>Et aute ex ipsum nulla nisi ipsum fugiat ipsum amet est. Velit veniam proident esse aliquip nostrud velit aliquip adipisicing. Eu deserunt sit deserunt do officia labore commodo. Sit ullamco eu sint et excepteur veniam sunt.</p>
+                        
+                        
+
+                        <p>Et aute ex ipsum nulla nisi ipsum fugiat ipsum amet est. Velit veniam proident esse aliquip nostrud velit aliquip adipisicing. Eu deserunt sit deserunt do officia labore commodo. Sit ullamco eu sint et excepteur veniam sunt.</p>
+                        <p>Et aute ex ipsum nulla nisi ipsum fugiat ipsum amet est. Velit veniam proident esse aliquip nostrud velit aliquip adipisicing. Eu deserunt sit deserunt do officia labore commodo. Sit ullamco eu sint et excepteur veniam sunt.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     )
