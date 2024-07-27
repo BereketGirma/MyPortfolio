@@ -63,7 +63,7 @@ contains: intro,name,info
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 40px;
+    margin: 2%;
 }
 
 .about{
@@ -111,9 +111,6 @@ contains: intro,name,info
     height: auto;
 }
 
-#about-content{
-    display: none;
-}
 
 @media screen and (max-width: 500px) {
     .about-container{
@@ -154,28 +151,19 @@ contains: intro,name,info
     }
 
     .about-content{
-        display: none;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%; 
     }
 
-    #about-content{
-       display: block;
-       position: relative;
-       justify-content: center;
-       border:white 1px solid;
-       width: 90%; 
+    .description{
+        width: 90%;
     }
 
-    #description{
-        width: 100%;
-    }
-
-    #about-image{
-        float:right;
-        width: 150px;
+    .about-image{
+        width: 250px;
         height: auto;
-        margin-left: 5px;
-        margin-bottom: 5px;
-        display: block;
+        margin-top: 15%;
     }
 
 }

@@ -58,7 +58,7 @@ const Project = () => {
                         <div className="project-info right-info">
                             <h4>Featured project</h4>
                             <h1 className="project-title">LobBot</h1>
-                            <div className="project-description right-desc">
+                            <div className="project-description right-desc" id= "project-description">
                                 <p>
                                     LobBot is a vertisile Telegram bot developed using Telegram API. 
                                     It enhances your Telegram experience by offering features such as searching for information, managing messages,sharing user status and more. 
