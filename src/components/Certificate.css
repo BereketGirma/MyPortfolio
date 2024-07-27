@@ -14,7 +14,7 @@
 .certificate-box{
     position: relative;
     width: 100%;
-    height: 300px;
+    height: auto;
     margin: 4%;
 }
 
@@ -112,3 +112,72 @@
     font-size: 24px;
     font-weight: bold;
 } 
+#mobile{
+    display: none;
+}
+@media screen and (max-width:500px) {
+    #mobile{
+        display: flex;
+    }
+    .certificate{
+        display: none;
+    }
+
+    .certificate-box{
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tabs{
+        display: flex;
+        position: relative;
+        justify-content: start;
+        width: 100%;
+        border:1px solid #a333ee;
+    }
+
+    .tabLinks{
+        display: flex;
+        cursor: pointer;
+        padding: 14px 16px;
+        background-color: transparent;
+        width: 100%;
+        justify-content: center;
+        color:rgb(201, 144, 255);
+        overflow: hidden;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .tabLinks:hover{
+        background-color: rgb(30, 2, 62);
+        color:rgb(201, 144, 255);
+    }
+
+    .tabLinks.active{
+        border-bottom:3px solid rgb(183, 0, 255);
+        background-color: rgb(30, 2, 62);
+    }
+
+    .tabcontent{
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .tabcontent img{
+        max-width: 80%;
+        height: auto;
+    }
+    .image{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+    }
+}

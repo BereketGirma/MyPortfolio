@@ -1,7 +1,6 @@
 .experience-container{
     display: flex;
     flex-direction: column;
-    border:solid 1px white;
     width: 80%;
 }
 
@@ -19,7 +18,6 @@
     justify-content: center;
     gap:2%;
     margin:2%;
-    border:1px solid white
 }
 
 .button-tile{
@@ -95,4 +93,57 @@
     border-top: 4px solid transparent;
     border-bottom: 4px solid transparent;
     border-left: 6px solid rgb(93, 0, 255);
+}
+
+@media screen and (max-width:500px) {
+    .experience-container{
+        margin: 20px;
+        width: 100%;
+    }
+    .experience{
+        font-size: 20px;
+    }
+    .title{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .title-line{
+        top:7px;
+    }
+    
+    .button-tile{
+        overflow: hidden;
+        border:1px solid #a333ee;
+        flex-direction: row;
+        width: 90%;
+        justify-content:center;
+        align-items: center;
+
+    }
+
+    .jobs-container{
+        flex-direction: column;
+        align-items: center;
+        width: 100%
+    }
+    .job{
+        background-color: inherit;
+        float: left;
+        border:none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 12px;
+        width: 100%;
+        white-space: nowrap;
+    } 
+
+    .job[aria-selected = "true"]{
+        border-left:0px;
+        border-bottom:3px solid rgb(183, 0, 255); 
+    }
+    .job-card{
+        width: 80%;
+    }
 }
