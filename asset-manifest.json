@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/MyPortfolio/static/css/main.f3557fdc.css",
+    "main.css": "/MyPortfolio/static/css/main.e91015f4.css",
     "main.js": "/MyPortfolio/static/js/main.071a2b12.js",
     "static/js/453.1407b060.chunk.js": "/MyPortfolio/static/js/453.1407b060.chunk.js",
     "static/media/PortfolioDemo.mp4": "/MyPortfolio/static/media/PortfolioDemo.e3bf2e883810a3a807cd.mp4",
@@ -12,12 +12,12 @@
     "static/media/CodePath-AND101-Certificate.jpg": "/MyPortfolio/static/media/CodePath-AND101-Certificate.736c390f706978606117.jpg",
     "static/media/projectBG.webp": "/MyPortfolio/static/media/projectBG.0bd02a75d69ad77ae065.webp",
     "index.html": "/MyPortfolio/index.html",
-    "main.f3557fdc.css.map": "/MyPortfolio/static/css/main.f3557fdc.css.map",
+    "main.e91015f4.css.map": "/MyPortfolio/static/css/main.e91015f4.css.map",
     "main.071a2b12.js.map": "/MyPortfolio/static/js/main.071a2b12.js.map",
     "453.1407b060.chunk.js.map": "/MyPortfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f3557fdc.css",
+    "static/css/main.e91015f4.css",
     "static/js/main.071a2b12.js"
   ]
 }
