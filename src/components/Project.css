@@ -6,14 +6,6 @@
     margin: 2%;
 }
 
-.project{
-    align-items: center;
-    display: flex;
-    justify-content:flex-start;
-    font-size: 1.5em;
-    margin: 2%;
-}
-
 .title{
     padding-left: 40px;
     padding-right: 10px;
@@ -31,7 +23,7 @@
     display: flex;
     position: relative;
     flex-direction: column;
-    margin: 40px;
+    margin: 2%;
     width: 80%;
 }
 
@@ -190,7 +182,10 @@
 
 @media screen and (max-width : 500px) {
     .project-container{
-        margin: 20px;
+        width: 100%;
+    }
+    .projects-container{
+        margin: 2%;
         width: 100%;
     }
     .project{
