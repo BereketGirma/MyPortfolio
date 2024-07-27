@@ -28,7 +28,7 @@
 }
 
 /*Fire fox*/
-html {
+ html {
     scrollbar-width: thin;
     scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg);
   }
@@ -43,7 +43,7 @@ html {
     align-items: center;
     justify-content: end;
     width: 10%;
-}
+} */
 
 .left-side{
     left:0;

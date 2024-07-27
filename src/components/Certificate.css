@@ -14,7 +14,7 @@
 .certificate-box{
     position: relative;
     width: 100%;
-    height: auto;
+    height: 300px;
     margin: 4%;
 }
 
@@ -115,6 +115,10 @@
 #mobile{
     display: none;
 }
+
+.tabcontent{
+    display: none;
+}
 @media screen and (max-width:500px) {
     #mobile{
         display: flex;
@@ -124,11 +128,9 @@
     }
 
     .certificate-box{
-        display: flex;
         position: relative;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        width: 100%;
+        margin: 4%;
     }
 
     .tabs{

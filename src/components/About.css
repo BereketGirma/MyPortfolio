@@ -158,6 +158,7 @@ contains: intro,name,info
 
     .description{
         width: 90%;
+        font-size: 1em;
     }
 
     .about-image{
