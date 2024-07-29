@@ -47,7 +47,7 @@
     box-shadow: 5px 5px #782af5;
 }
 
-@media screen and (max-width : 500px) {
+@media screen and (max-width : 600px) {
     .contact-container{
         margin: 20px;
         width: 100%;

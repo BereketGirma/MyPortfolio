@@ -119,7 +119,7 @@
 .tabcontent{
     display: none;
 }
-@media screen and (max-width:500px) {
+@media screen and (max-width: 600px) {
     #mobile{
         display: flex;
     }
@@ -138,6 +138,7 @@
         position: relative;
         justify-content: start;
         width: 100%;
+        margin-bottom: 5%;
         border:1px solid #a333ee;
     }
 
@@ -174,6 +175,7 @@
     .tabcontent img{
         max-width: 80%;
         height: auto;
+        margin-top:3%;
     }
     .image{
         display: flex;

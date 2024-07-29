@@ -95,7 +95,7 @@
     border-left: 6px solid rgb(93, 0, 255);
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:600px) {
     .experience-container{
         margin: 20px;
         width: 100%;
@@ -124,7 +124,8 @@
     .jobs-container{
         flex-direction: column;
         align-items: center;
-        width: 100%
+        width: 100%;
+        margin-top:5%;
     }
     .job{
         background-color: inherit;
@@ -145,5 +146,6 @@
     }
     .job-card{
         width: 80%;
+        margin-top:3%;
     }
 }

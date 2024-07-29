@@ -111,7 +111,7 @@ contains: intro,name,info
 }
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
     .about-container{
         width: 100%;
     }
