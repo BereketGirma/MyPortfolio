@@ -18,7 +18,7 @@ const Certificate = () => {
                 <div className="certificate one">
                     <p>MavPASS PHYS-211</p>
                     <img 
-                        src = {require("./Images/Certificate Images/MavPASS-PHYS211.jpg")} 
+                        src = {require("../../assets/Images/Certificate Images/MavPASS-PHYS211.jpg")} 
                         alt = "Not found" 
                     />
                 </div>
@@ -26,7 +26,7 @@ const Certificate = () => {
                 <div className="certificate two">
                     <p>MavPASS CIS-121</p>
                     <img 
-                        src = {require("./Images/Certificate Images/MavPASS-CIS121.jpg")} 
+                        src = {require("../../assets/Images/Certificate Images/MavPASS-CIS121.jpg")} 
                         alt = "Not Found"
                     />
                 </div>
@@ -34,7 +34,7 @@ const Certificate = () => {
                 <div className="certificate three">
                     <p>CodePath AND-101</p>
                     <img 
-                        src = {require("./Images/Certificate Images/CodePath-AND101-Certificate.jpg")} 
+                        src = {require("../../assets/Images/Certificate Images/CodePath-AND101-Certificate.jpg")} 
                         alt = "Not Found"
                     />
                 </div>
@@ -63,7 +63,7 @@ const Certificate = () => {
                         <div className='image'>
                             <h3>CodePath AND-101</h3>
                             <img 
-                                src = {require("./Images/Certificate Images/CodePath-AND101-Certificate.jpg")} 
+                                src = {require("../../assets/Images/Certificate Images/CodePath-AND101-Certificate.jpg")} 
                                 alt = "Not found" 
                             /> 
                         </div>
@@ -73,7 +73,7 @@ const Certificate = () => {
                         <div className='image'>
                             <h3>MavPASS CIS-121</h3>
                             <img 
-                                src = {require("./Images/Certificate Images/MavPASS-CIS121.jpg")} 
+                                src = {require("../../assets/Images/Certificate Images/MavPASS-CIS121.jpg")} 
                                 alt = "Not found" 
                             />
                         </div>
@@ -83,7 +83,7 @@ const Certificate = () => {
                         <div className='image'>
                             <h3>MavPASS PHYS-211</h3>
                             <img 
-                                src = {require("./Images/Certificate Images/MavPASS-PHYS211.jpg")} 
+                                src = {require("../../assets/Images/Certificate Images/MavPASS-PHYS211.jpg")} 
                                 alt = "Not found" 
                             />
                         </div>

@@ -1,4 +1,3 @@
-import React, {useEffect, useState} from 'react';
 import './Main.css'
 
 //-------------------icon imports--------------------------
@@ -8,8 +7,8 @@ import {faGithub , faLinkedinIn} from '@fortawesome/free-brands-svg-icons';
 
 const Main = ()=>{
     
-    //Send email when clicked
-    const handleClick = (event) => {
+    //Redirect to mail on click
+    const handleEmailClick = (event) => {
         event.preventDefault();
         window.location.href = 'mailto:bereketgirma002@gmail.com';
     };
@@ -33,7 +32,7 @@ const Main = ()=>{
             </div>
 
             <div className="side-container right-side">
-                <span className="vertical-text" onClick={handleClick}>bereketgirma002@gmail.com</span>
+                <span className="vertical-text" onClick={handleEmailClick}>bereketgirma002@gmail.com</span>
                 <div className="side-line"></div>
             </div>            
         </div>

@@ -1,10 +1,10 @@
-import NavBar from './components/NavBar';
-import About from './components/About';
-import Project from './components/Project'
-import Experience from './components/Experience';
-import Certificate from './components/Certificate';
-import Contact from './components/Contact';
-import Main from './components/Main';
+import NavBar from './components/NavBar/NavBar';
+import About from './components/About/About';
+import Project from './components/Project/Project'
+import Experience from './components/Experience/Experience';
+import Certificate from './components/Certificate/Certificate';
+import Contact from './components/Contact/Contact';
+import Main from './components/Main/Main';
 import './App.css';
 
 

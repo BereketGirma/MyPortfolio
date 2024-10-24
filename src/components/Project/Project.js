@@ -2,17 +2,17 @@ import {React, useState} from "react";
 import './Project.css'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
-import {faGithub , faLinkedinIn} from '@fortawesome/free-brands-svg-icons'; 
+import {faGithub} from '@fortawesome/free-brands-svg-icons'; 
 
 const Project = () => {
 
     //project video demos
     const videoList = {
         'project1' : {
-            videoSrc: require("./VideoDemo/Test2.mp4")
+            videoSrc: require("../../assets/VideoDemo/PortfolioDemo.mp4")
         },
         'project2' : {
-            videoSrc: require("./VideoDemo/PortfolioDemo.mp4")
+            videoSrc: require("../../assets/VideoDemo/PortfolioDemo.mp4")
         }
     }
 
@@ -48,7 +48,7 @@ const Project = () => {
                     <div className="project-card">
                         <div className='imgContainer' onClick={() => videoOpen("project1")}>
                                 <img 
-                                    src = {require("./Images/Project Images/LobBot.png")} 
+                                    src = {require("../../assets/Images/Project Images/LobBot.png")} 
                                     alt = "" 
                                     className="image one" 
                                 />
@@ -94,7 +94,7 @@ const Project = () => {
                         
                         <div className='imgContainer' onClick={() => videoOpen("project2")} >
                             <img 
-                                src = {require("./Images/Project Images/projectBG.webp")} 
+                                src = {require("../../assets/Images/Project Images/projectBG.webp")} 
                                 alt = "" 
                                 className="image one" 
                             />
@@ -107,7 +107,7 @@ const Project = () => {
                         
                         <div className='imgContainer'>
                             <img 
-                                src = {require("./Images/Project Images/projectBG.webp")} 
+                                src = {require("../../assets/Images/Project Images/projectBG.webp")} 
                                 alt = "" 
                                 className="image one" 
                             />

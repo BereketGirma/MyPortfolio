@@ -4,7 +4,7 @@ const Experience = () => {
      //--------------------Job Description-----------------------------------
      const jobDetail = {
         'ITSolutions' : {
-            title: 'IT Student Consultant',
+            title: 'IT Lead Consultant',
             time: 'August 2023 - Present',
             tasks:[
                 'Provided personalized IT solutions to students, faculty, and staff, addressing hardware and software issues.',
@@ -12,15 +12,15 @@ const Experience = () => {
                 ]
             },
         'MavPASS-CIS' : {
-            title: 'IT Student Consultant',
-            time: 'August 2023 - Present',
+            title: 'MavPass Leader for CIS 121(Introduction to programming)',
+            time: 'January 2024 - May 2024',
             tasks:[
                 'Provided personalized IT solutions to students, faculty, and staff, addressing hardware and software issues.'
                 ]
             },
         'MavPASS-PHY' : {
             title: 'IT Student Consultant',
-            time: 'August 2023 - Present',
+            time: 'August 2023 - December 2024',
             tasks:[
                 'Provided personalized IT solutions to students, faculty, and staff, addressing hardware and software issues.',
                 'Collaborated with cross-functional teams to troubleshoot and resolve technical problems promptly.',

@@ -1,5 +1,6 @@
 import React from "react";
 import './About.css';
+import { aboutMeText } from '../../data/aboutContent';
 
 const About = () => {
     return(
@@ -25,14 +26,12 @@ const About = () => {
 
                 <div className="about-content">
                     <div className="description">
-                        <p>Et aute ex ipsum nulla nisi ipsum fugiat ipsum amet est. Velit veniam proident esse aliquip nostrud velit aliquip adipisicing. Eu deserunt sit deserunt do officia labore commodo. Sit ullamco eu sint et excepteur veniam sunt.</p>
-                        <p>Et aute ex ipsum nulla nisi ipsum fugiat ipsum amet est. Velit veniam proident esse aliquip nostrud velit aliquip adipisicing. Eu deserunt sit deserunt do officia labore commodo. Sit ullamco eu sint et excepteur veniam sunt.</p>
-                        <p>Et aute ex ipsum nulla nisi ipsum fugiat ipsum amet est. Velit veniam proident esse aliquip nostrud velit aliquip adipisicing. Eu deserunt sit deserunt do officia labore commodo. Sit ullamco eu sint et excepteur veniam sunt.</p>
+                        <p></p>
                     </div>
 
                     <div className="about-image-container">
                         <img 
-                            src = {require("./Images/Project Images/projectBG.webp")} 
+                            src = {require("../../assets/Images/Project Images/projectBG.webp")} 
                             alt="About" 
                             className="about-image"
                             />
