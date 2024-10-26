@@ -29,9 +29,9 @@ const About = () => {
                 <div className="about-content">
                     <div className="description">
                         {aboutContent.description.map((paragraph, index) => (
-                            <p key = {index} classname = "description-paragraph">
+                            <h3 key = {index} classname = "description-paragraph">
                                 {paragraph}
-                            </p>
+                            </h3>
                         ))}
                     </div>
 

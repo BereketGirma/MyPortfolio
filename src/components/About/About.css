@@ -5,20 +5,17 @@
     margin: 5rem auto;
     width: 80%;
     gap: 2.5rem;
-    border: white 1px solid;
 }
 .iconIntro-container{
     position: relative;
     display: flex;
     gap: 1rem;
-    border: white 1px solid;
 }
 
 .circle-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: white 1px solid;
 
     
 }
@@ -42,11 +39,10 @@ contains: intro,name,info
 */
 .intro-container{
     position:relative;
-    border: white 1px solid;
 }
 
 .intro{
-    font-size: clamp(1.5rem, 4vw, 4rem);
+    font-size: clamp(3rem, 5vw, 10rem);
     font-weight: bolder;
 }
 
@@ -55,31 +51,29 @@ contains: intro,name,info
 }
 
 .info{
-    font-size: clamp(1.5rem, 2.7vw, 3rem);
+    font-size: clamp(1.5rem, 2.5vw, 4rem);
 }
 
 .about-me-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 2rem;
 }
 
 .about{
     align-items: center;
     display: flex;
     justify-content:flex-start;
-    font-size: 1.5em;
-    margin: 2%;
 }
 
 .title{
-    padding-left: 40px;
-    padding-right: 10px;
+    font-size: clamp(1.5rem, 2.5vw, 4rem);
 }
 
 .title-line{
     position: relative;
-    width:40%;
+    width:40vw;
     height: 2px;
     background:rgb(138, 106, 255);
     top:10px;
@@ -95,27 +89,39 @@ contains: intro,name,info
 .description{
     display: flex;
     flex-direction: column;
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 1.3vw, 2rem);
+    font-weight: bolder;
     gap: 1.5rem;
 }
 
 .about-image-container{
-    position: relative;
+    display: flex;
 }
+
 .about-image{
     width: 100%;
+    max-height: 500px;
     height: auto;
+    object-fit: contain;
+    border-radius: 10px;
 }
 
 
 @media screen and (max-width: 768px) {
     .about-container{
-        width: 90%
+        width: 90%;
     }
 
     .about-content{
-        grid-template-columns: 1fr;
+        grid-template-columns: none;
+        grid-template-rows : 1fr;
     }
 
+    .about-image{
+        width: 60%;
+        max-height: 400px;
+        height: auto;
+        margin: 0 auto;
+    }
 
 }
