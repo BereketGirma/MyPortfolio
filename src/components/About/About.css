@@ -1,35 +1,38 @@
 .about-container{
     display: flex;
     flex-direction: column;
+    padding: 1rem;
+    margin: 5rem auto;
     width: 80%;
-    margin-top: 9%;
+    gap: 2.5rem;
+    border: white 1px solid;
 }
 .iconIntro-container{
     position: relative;
     display: flex;
+    gap: 1rem;
+    border: white 1px solid;
 }
 
 .circle-container{
     display: flex;
-    margin-top: 60px;
-    margin-left: 20px;
-    position: relative;
     flex-direction: column;
     align-items: center;
-    width: 2%;
+    border: white 1px solid;
+
     
 }
 /*design for the circle*/
 .circle{
     border-radius: 50%;
     background-color: #5d00f3;
-    width: 25px;
-    height: 25px;
+    width: 24px;
+    height: 24px;
 }
 /*design for the line*/
 .line{
     width:6px;
-    height: 200px;
+    height: 100%;
     background: linear-gradient(to bottom, #5d00f3,#3100b600);
 }
 
@@ -38,13 +41,12 @@ layout for the line-contianer
 contains: intro,name,info
 */
 .intro-container{
-    margin:20px;
-    position: relative;
+    position:relative;
+    border: white 1px solid;
 }
 
 .intro{
-    color:#ffffff;
-    font-size: 75px;
+    font-size: clamp(1.5rem, 4vw, 4rem);
     font-weight: bolder;
 }
 
@@ -53,9 +55,7 @@ contains: intro,name,info
 }
 
 .info{
-    font-size: 32px;
-    font-style: normal;
-    font-weight: light;
+    font-size: clamp(1.5rem, 2.7vw, 3rem);
 }
 
 .about-me-container{
@@ -86,24 +86,21 @@ contains: intro,name,info
 }
 
 .about-content{
-    display: flex;
-    position: relative;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     align-items: center;
-    margin: 2%;
+    gap: 2rem;
 }
 
 .description{
-    flex:1;
-    width: 50%;
-    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    gap: 1.5rem;
 }
 
 .about-image-container{
     position: relative;
-    display: flex;
-    width: 40%;
-    justify-content: center;
 }
 .about-image{
     width: 100%;
@@ -111,59 +108,14 @@ contains: intro,name,info
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     .about-container{
-        width: 100%;
-    }
-    .circle{
-        width: 15px;
-        height: 15px;
-    }
-    .line{
-        width:4px;
-    }
-    .intro-container{
-        margin-top:40px;
-    }
-    .intro{
-        font-size: 30px;
-    }
-    .info{
-        margin-top: 5px;
-        font-size: 25px;
-    }
-
-    .about-me-container{
-        width: 100%;
-    }
-    .about{
-        font-size: 16px;
-    }
-    .title{
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    
-    .title-line{
-        top:7px;
+        width: 90%
     }
 
     .about-content{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%; 
+        grid-template-columns: 1fr;
     }
 
-    .description{
-        width: 90%;
-        font-size: 1em;
-    }
-
-    .about-image{
-        width: 250px;
-        height: auto;
-        margin-top: 15%;
-    }
 
 }

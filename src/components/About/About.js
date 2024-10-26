@@ -1,10 +1,10 @@
 import React from "react";
 import './About.css';
-import { aboutMeText } from '../../data/aboutContent';
+import { aboutContent } from '../../data/aboutContent'; //Import content
 
 const About = () => {
     return(
-        <div className="about-container" id = "about">
+        <section className="about-container" id = "about">
             <div className="iconIntro-container">
                 <div className="circle-container">
                     <div className="circle"></div>
@@ -12,8 +12,10 @@ const About = () => {
                 </div>
 
                 <div className="intro-container">
-                    <p className="intro">Hi, I'm <span className="name">Bereket.</span>
-                    <p className="info">I'm currently rising Junior at Minnesota State University, Mankato majoring in Computer Science.</p>
+                    <p className="intro">
+                        {aboutContent.heading}
+                        <span className="name"> {aboutContent.name}.</span>
+                        <p className="info">{aboutContent.intro}</p>
                     </p>
                 </div>
             </div>
@@ -26,7 +28,11 @@ const About = () => {
 
                 <div className="about-content">
                     <div className="description">
-                        <p></p>
+                        {aboutContent.description.map((paragraph, index) => (
+                            <p key = {index} classname = "description-paragraph">
+                                {paragraph}
+                            </p>
+                        ))}
                     </div>
 
                     <div className="about-image-container">
@@ -34,11 +40,12 @@ const About = () => {
                             src = {require("../../assets/Images/Project Images/projectBG.webp")} 
                             alt="About" 
                             className="about-image"
+                            loading = "lazy"
                             />
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 
