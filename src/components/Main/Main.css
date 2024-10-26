@@ -1,39 +1,3 @@
-*{
-    margin:0;
-    padding: 0;
-    height: auto;
-    width: auto;
-}
-
-/* ----------------Custom scroll bar------------------ */
-:root{
-    --scrollbar-bg: rgb(34, 3, 52);
-    --scrollbar-thumb : rgb(161, 13, 247);
-    --scrollbar-thumb-hover : rgb(255, 255, 255);
-}
-
-::-webkit-scrollbar{
-    width: var(--scrollbar-width);
-    height: var(--scrollbar-height);
-}
-::-webkit-scrollbar-track{
-    background: var(--scrollbar-bg);
-}
-::-webkit-scrollbar-thumb{
-    background: var(--scrollbar-thumb);
-}
-
-::-webkit-scrollbar-thumb-hover{
-    background: var(--scrollbar-thumb-hover);
-}
-
-/*Fire fox*/
- html {
-    scrollbar-width: thin;
-    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg);
-  }
-
-
 /*Side icons and text*/
 .side-container{
     position: fixed;
@@ -42,7 +6,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: end;
-    width: 10%;
+    width: 7vw;
 }
 
 .left-side{
@@ -76,7 +40,7 @@
     margin: 30px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     .side-container{
         display: none;
     }
