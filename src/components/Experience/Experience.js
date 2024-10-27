@@ -97,6 +97,7 @@ const Experience = () => {
                     <button className="job" role="tab" aria-selected = "false" data-job = "MavPASS-CIS" onClick={(e) => showJobCard(e)}>MavPASS  CIS</button>
                     <button className="job" role="tab" aria-selected = "false" data-job = "MavPASS-PHY" onClick={(e) => showJobCard(e)}>MavPASS  PHY</button>
                 </div>
+                <div className="job-line"></div>
                 <div className="job-card" id = "job-card">
                     <h3 className="job-title"></h3>
                     <p className="job-time"></p>
