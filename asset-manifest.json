@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/MyPortfolio/static/css/main.a50fb2f7.css",
-    "main.js": "/MyPortfolio/static/js/main.071a2b12.js",
+    "main.css": "/MyPortfolio/static/css/main.23fc7986.css",
+    "main.js": "/MyPortfolio/static/js/main.72afd70f.js",
     "static/js/453.1407b060.chunk.js": "/MyPortfolio/static/js/453.1407b060.chunk.js",
     "static/media/PortfolioDemo.mp4": "/MyPortfolio/static/media/PortfolioDemo.e3bf2e883810a3a807cd.mp4",
     "static/media/MavPASS-CIS121.jpg": "/MyPortfolio/static/media/MavPASS-CIS121.d587fc4f6044025b782d.jpg",
-    "static/media/Test2.mp4": "/MyPortfolio/static/media/Test2.30bdf50718ae486a2ef2.mp4",
     "static/media/backgroundImg.png": "/MyPortfolio/static/media/backgroundImg.ad33add2430e34307c33.png",
     "static/media/MavPASS-PHYS211.jpg": "/MyPortfolio/static/media/MavPASS-PHYS211.da27aee28180315ad82e.jpg",
     "static/media/LobBot.png": "/MyPortfolio/static/media/LobBot.0579657d670f9e8120c6.png",
     "static/media/CodePath-AND101-Certificate.jpg": "/MyPortfolio/static/media/CodePath-AND101-Certificate.736c390f706978606117.jpg",
     "static/media/projectBG.webp": "/MyPortfolio/static/media/projectBG.0bd02a75d69ad77ae065.webp",
     "index.html": "/MyPortfolio/index.html",
-    "main.a50fb2f7.css.map": "/MyPortfolio/static/css/main.a50fb2f7.css.map",
-    "main.071a2b12.js.map": "/MyPortfolio/static/js/main.071a2b12.js.map",
+    "main.23fc7986.css.map": "/MyPortfolio/static/css/main.23fc7986.css.map",
+    "main.72afd70f.js.map": "/MyPortfolio/static/js/main.72afd70f.js.map",
     "453.1407b060.chunk.js.map": "/MyPortfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a50fb2f7.css",
-    "static/js/main.071a2b12.js"
+    "static/css/main.23fc7986.css",
+    "static/js/main.72afd70f.js"
   ]
 }
