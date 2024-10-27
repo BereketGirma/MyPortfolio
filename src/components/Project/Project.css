@@ -1,59 +1,60 @@
+.project-container{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+    width: 80%;
+    gap: 2.5rem;
+}
+
 .project{
     align-items: center;
     display: flex;
     justify-content:flex-start;
-    font-size: 1.5em;
-    margin: 2%;
+    gap: 1rem;
 }
 
-.title{
-    padding-left: 40px;
-    padding-right: 10px;
+.project .title{
+    font-size: clamp(1.3rem, 2vw, 2.5rem);
 }
 
-.title-line{
+.project .title-line{
     position: relative;
-    width:40%;
-    height: 2px;
+    width:50%;
+    height: 0.2vh;
     background:rgb(138, 106, 255);
     top:10px;
 }
 
-.project-container{
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    margin: 2%;
-    width: 80%;
+.projects-container{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 2rem;
 }
 
 .project-card{
     display: flex;
     position: relative;
-    align-items: center;
     justify-content: space-evenly;
-    margin: 4%;
 }
 /* 690px,450px */
 .imgContainer{
-    border:1px solid #552fff;
+    border:3px solid rgb(138, 106, 255);
     border-radius: 15px;
     position: relative;
     display: flex;
-    width: 50%;
-    height: 45vh;
-    cursor: pointer;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     overflow: hidden;
+    z-index: 0;
 }
-.project-card img {
-    position: flex;
+
+.image{
     width: 100%;
-    top:0;
-    left:0  ;
-    z-index: -1;
-    object-fit: fill;
+    max-height: 40vh;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
 }
 
 .video-overlay{
@@ -70,7 +71,7 @@
 }
 
 .video-content{
-    background: #c5c5c538;
+    background: #f1f1f15d;
     padding: 20px;
     border-radius: 15px;
     max-width: 80%;
@@ -83,23 +84,24 @@
 }
 
 .video-content video{
-    width: 80%;
+    width: 90%;
     height: auto;
 }
 
 .close-button{
     position: absolute;
-    top:10px;
-    right:10px;
+    top: 12px;
+    right:12px;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 36px;
     font-weight: bold;
+    color: #fdfdfd;
 } 
 
 .videoDemo{
     position: absolute;
     color:white;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.956);
     bottom: 0;
     width: 100%;
     height: 20%;
@@ -117,12 +119,11 @@
 
 .project-info{
     position: relative;
-    padding: 2%;
-    /* border: 1px solid white; */
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
-    width: 50%;
+    width: 60%;
+    z-index: 1;
+    font-size: clamp(1rem, 1.25vw, 2.5rem);
 }
 
 .left-info{
@@ -138,10 +139,8 @@
     display: flex;
     margin: 1%;
     padding: 3%;
-    align-items: center;
-    background-color: #352255;
+    background-color: rgb(59, 36, 140);
     width: 115%;
-    height: 100%;
     border-radius:5px;
 }
 .softwares{
@@ -180,39 +179,27 @@
 }
 */
 
-@media screen and (max-width : 600px) {
+@media screen and (max-width : 768px) {
     .project-container{
-        width: 100%;
-    }
-    .projects-container{
-        margin: 2%;
-        width: 100%;
-    }
-    .project{
-        font-size: 16px;
-    }
-    .title{
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    
-    .title-line{
-        top:7px;
+        width: 90%;
     }
     
     .imgContainer{
         display: none;
     } 
 
-    .project-info{
-        justify-content: center;
-        width: 90%;
-        margin: 0%;
+    .project-card{
         border:white solid 1px;
         border-radius:15px;
         border-color: #552fff;
         background-color: rgba(101, 159, 235, 0.126);
+        padding: 2%;
     }
+
+    .project-info{
+        width: 100%;
+    }
+
     .right-info,
     .left-info{
         justify-content: left;
@@ -224,4 +211,10 @@
         z-index: 1;
     }
 
+}
+
+@media screen and (min-width: 1440px) {
+    .project-container{
+        width: 50%;
+    }
 }

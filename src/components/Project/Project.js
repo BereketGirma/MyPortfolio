@@ -1,5 +1,6 @@
 import {React, useState} from "react";
 import './Project.css'
+import { projectContent } from "../../data/projectsContent";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
 import {faGithub} from '@fortawesome/free-brands-svg-icons'; 
@@ -49,25 +50,22 @@ const Project = () => {
                         <div className='imgContainer' onClick={() => videoOpen("project1")}>
                                 <img 
                                     src = {require("../../assets/Images/Project Images/LobBot.png")} 
-                                    alt = "" 
-                                    className="image one" 
+                                    alt = "project one" 
+                                    className="image one"
+                                    loading="lazy" 
                                 />
                                 <p className='videoDemo'>Click image to view demo!</p>
                         </div>
 
                         <div className="project-info right-info">
                             <h4>Featured project</h4>
-                            <h1 className="project-title">LobBot</h1>
+                            <h1 className="project-title">{projectContent.project1.title}</h1>
                             <div className="project-description right-desc" id= "project-description">
-                                <p>
-                                    LobBot is a vertisile Telegram bot developed using Telegram API. 
-                                    It enhances your Telegram experience by offering features such as searching for information, managing messages,sharing user status and more. 
-                                    Perfect for both practical tasks and enjoyment, LOB-BOT makes interacting on Telegram more efficient and enjoyable.
-                                </p>
+                                <h4>{projectContent.project1.description}</h4>
                             </div>
-                            <h5 className="softwares">TelegramAPI Python</h5>
+                            <h5 className="softwares">{projectContent.project1.softwares}</h5>
                             <div className="github-icon-container">
-                                <a href = "https://github.com/BereketGirma/LobBot" target="_blank" rel="noopener noreferrer">
+                                <a href = {projectContent.project1.github}  target="_blank" rel="noopener noreferrer">
                                     <FontAwesomeIcon icon = {faGithub} size = "2x"/>
                                 </a>
                             </div>
@@ -77,14 +75,11 @@ const Project = () => {
                     <div className="project-card">
                         <div className="project-info left-info">
                             <h4>Featured project</h4>
-                            <h1 className="project-title">Maverick Maps</h1>
+                            <h1 className="project-title">{projectContent.project2.title}</h1>
                             <div className="project-description left desc">
-                                <p>
-                                    Maverick Maps is a tool that is built for students, faculty, staff and vistors to have an easier time navigating through the campus of Minnesota State University,Mankato.
-                                    It is an app built with React-Native along side Unity which displays a 3D Map of the campus layout. It is an easy access tool with user friendly UI design. This app is currently in progress.
-                                </p>
+                                <h4>{projectContent.project2.description}</h4>
                             </div>
-                            <h5 className="softwares">TypeScript Swift Java React-Native Unity Xcode Android-Studio</h5>
+                            <h5 className="softwares">{projectContent.project2.softwares}</h5>
                             <div className="github-icon-container">
                                 <a href = "example.com" target="_blank" rel="noopener noreferrer">
                                     <FontAwesomeIcon icon = {faGithub} size = "2x"/>
@@ -97,6 +92,7 @@ const Project = () => {
                                 src = {require("../../assets/Images/Project Images/projectBG.webp")} 
                                 alt = "" 
                                 className="image one" 
+                                loading = "lazy"
                             />
                                 <p className='videoDemo'>Click image to view demo!</p>
                         </div>
@@ -104,12 +100,12 @@ const Project = () => {
                     </div>
 
                     <div className="project-card">
-                        
                         <div className='imgContainer'>
                             <img 
                                 src = {require("../../assets/Images/Project Images/projectBG.webp")} 
-                                alt = "" 
+                                alt = "project 1" 
                                 className="image one" 
+                                loading = "lazy"
                             />
                         </div>
 
