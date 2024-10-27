@@ -1,47 +1,23 @@
 import {React,useEffect, useState} from "react"
 import './Experience.css'
+import { experienceContent } from "../../data/experienceContent"
 const Experience = () => {
      //--------------------Job Description-----------------------------------
-     const jobDetail = {
-        'ITSolutions' : {
-            title: 'IT Lead Consultant',
-            time: 'August 2023 - Present',
-            tasks:[
-                'Provided personalized IT solutions to students, faculty, and staff, addressing hardware and software issues.',
-                'Collaborated with cross-functional teams to troubleshoot and resolve technical problems promptly.'
-                ]
-            },
-        'MavPASS-CIS' : {
-            title: 'MavPass Leader for CIS 121(Introduction to programming)',
-            time: 'January 2024 - May 2024',
-            tasks:[
-                'Provided personalized IT solutions to students, faculty, and staff, addressing hardware and software issues.'
-                ]
-            },
-        'MavPASS-PHY' : {
-            title: 'IT Student Consultant',
-            time: 'August 2023 - December 2024',
-            tasks:[
-                'Provided personalized IT solutions to students, faculty, and staff, addressing hardware and software issues.',
-                'Collaborated with cross-functional teams to troubleshoot and resolve technical problems promptly.',
-                'Collaborated with cross-functional teams to troubleshoot and resolve technical problems promptly.'
-                ]
-            }
-    }
+    
     //-------------------------------------------------------------------------
 
-    const [selectedJob, setSelectedJob] = useState("ITSolutions");
+    const [selectedJob, setSelectedJob] = useState("job1");
     
     //when window is loaded it will trigger the first job to show its details
     useEffect(() => {
-        setSelectedJob("ITSolutions");
+        setSelectedJob("job1");
     },[]);
 
     const handleJobClick = (job) => {
         setSelectedJob(job);
     }
 
-    const {title, time, tasks} = jobDetail[selectedJob];
+    const {title, time, tasks} = experienceContent[selectedJob];
 
     return(
         <div className="experience-container" id = "experience">
@@ -54,18 +30,18 @@ const Experience = () => {
 
             <div className="jobs-container">
                 <div className="button-tile" role="tablist">
-                    {Object.keys(jobDetail).map((job) => {
+                    {Object.keys(experienceContent).map((job, index) => (
                         <button
-                            key={job}
+                            key={index}
                             className={`job ${selectedJob === job ? "active" : ""}`}
                             role="tab"
                             aria-selected={selectedJob === job}
                             data-job={job}
                             onClick={() => handleJobClick(job)}
                         >
-                            {jobDetail[job].title}
+                            {experienceContent[job].button}
                         </button>
-                    })}
+                    ))}
                 </div>
 
                 <div className="job-line"></div>
@@ -74,12 +50,9 @@ const Experience = () => {
                     <h3 className="job-title">{title}</h3>
                     <p className="job-time">{time}</p>
                     {tasks.map((task, index) => (
-                        <div
-                            key={index}
-                            className="arrow-text-container"
-                        >
+                        <div key={index} className="arrow-text-container">
                             <div className="arrow"></div>
-                            <p className="job-task">{task}</p>
+                            <h4 className="job-task">{task}</h4>
                         </div>
                     ))}
                 </div>
