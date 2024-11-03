@@ -3,16 +3,27 @@
     position: relative;
     flex-direction: column;
     justify-content: center;
-    margin: 40px;
     width: 80%;
+    gap:2rem;
+    margin-bottom: 10vw;
 }
 
 .contact{
     align-items: center;
     display: flex;
-    justify-content:flex-start;
-    font-size: 1.5em;
-    margin: 2%;
+    gap:1rem
+}
+
+.contact-title{
+    font-size: clamp(1.3rem, 2vw, 2.5rem);
+}
+
+.contact-title-line{
+    position: relative;
+    width:50%;
+    height: 0.2vh;
+    background:rgb(138, 106, 255);
+    top:10px;
 }
 
 .contact-content{
@@ -20,12 +31,15 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin:2%;
+    gap:3rem
 }
 .contact-description{
-    font-size: 1.3rem;
-    text-align: center;
-    width: 75%;
+    font-size: clamp(1.3rem, 2vw, 3rem);
+}
+
+.contact-description u{
+    color:#a56dff;
+    cursor: pointer;
 }
 
 .contact-button{
@@ -34,10 +48,11 @@
     border:2px solid #782af5;
     border-radius: 10px;
     color:#a56dff;
-    font-size: 1.3rem;
-    width: 20%;
-    height: 70px;
-    margin: 10%;
+    font-size: clamp(1rem, 2vw, 4rem);
+    width: 16vw;
+    max-width: 20vw;
+    height: 7vw;
+    max-height: 10vh;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
@@ -49,25 +64,16 @@
 
 @media screen and (max-width : 600px) {
     .contact-container{
-        margin: 20px;
-        width: 100%;
+        width: 90%;
     }
-    .contact{
-        font-size: 16px;
-    }
-    .title{
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .title-line{
-        top:7px;
-    }
-    .contact-description{
-        font-size: 1em;
-        width: 100%;
-    }
+
     .contact-button{
         width: 30%;
         height: 5vh;
+    }
+
+    .contact-button:hover{
+        transform: none;
+        box-shadow: none;
     }
 }
