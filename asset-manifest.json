@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/MyPortfolio/static/css/main.a907e087.css",
-    "main.js": "/MyPortfolio/static/js/main.f3fc3f5a.js",
+    "main.css": "/MyPortfolio/static/css/main.6330a7a5.css",
+    "main.js": "/MyPortfolio/static/js/main.9fe4bbe2.js",
     "static/js/453.1407b060.chunk.js": "/MyPortfolio/static/js/453.1407b060.chunk.js",
     "static/media/PortfolioDemo.mp4": "/MyPortfolio/static/media/PortfolioDemo.e3bf2e883810a3a807cd.mp4",
     "static/media/MavPASS-CIS121.jpg": "/MyPortfolio/static/media/MavPASS-CIS121.d587fc4f6044025b782d.jpg",
@@ -11,12 +11,12 @@
     "static/media/CodePath-AND101-Certificate.jpg": "/MyPortfolio/static/media/CodePath-AND101-Certificate.736c390f706978606117.jpg",
     "static/media/projectBG.webp": "/MyPortfolio/static/media/projectBG.0bd02a75d69ad77ae065.webp",
     "index.html": "/MyPortfolio/index.html",
-    "main.a907e087.css.map": "/MyPortfolio/static/css/main.a907e087.css.map",
-    "main.f3fc3f5a.js.map": "/MyPortfolio/static/js/main.f3fc3f5a.js.map",
+    "main.6330a7a5.css.map": "/MyPortfolio/static/css/main.6330a7a5.css.map",
+    "main.9fe4bbe2.js.map": "/MyPortfolio/static/js/main.9fe4bbe2.js.map",
     "453.1407b060.chunk.js.map": "/MyPortfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a907e087.css",
-    "static/js/main.f3fc3f5a.js"
+    "static/css/main.6330a7a5.css",
+    "static/js/main.9fe4bbe2.js"
   ]
 }
