@@ -2,9 +2,6 @@ import {React,useEffect, useState} from "react"
 import './Experience.css'
 import { experienceContent } from "../../data/experienceContent"
 const Experience = () => {
-     //--------------------Job Description-----------------------------------
-    
-    //-------------------------------------------------------------------------
 
     const [selectedJob, setSelectedJob] = useState("job1");
     
