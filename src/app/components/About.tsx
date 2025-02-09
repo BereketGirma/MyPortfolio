@@ -6,7 +6,7 @@ import image from "../assets/images.png"
 
 const About = () => {
     return(
-        <div className="min-h-fit text-gray-900 flex flex-col justify-start px-6 py-12 gap-8">
+        <div id="about" className="min-h-fit text-gray-900 flex flex-col justify-start px-6 py-12 gap-8">
             {/* Starter info */}
             <div className="w-100 flex flex-col">
                 <h1 className="text-4xl text-gray-600 leading-relaxed font-semibold">{aboutContent.heading} 

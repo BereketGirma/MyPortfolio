@@ -10,7 +10,7 @@ const Contact = () => {
     return(
         //Contact section
 
-        <div className="min-h-fit text-gray-900 flex flex-col justify-center px-6 py-12 gap-8">
+        <div id="contact" className="min-h-fit text-gray-900 flex flex-col justify-center px-6 py-12 gap-8">
             <div className="w-full flex flex-col justify-center gap-2">
                 <div className="flex items-center gap-2">
                     <h1 className="text-4xl text-gray-900 leading-relaxed font-semibold">Contact Me</h1>

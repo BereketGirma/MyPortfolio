@@ -18,7 +18,7 @@ const Experience = () => {
     const { title, time, tasks } = (experienceContent as ExperienceContentType)[activeTab];
 
     return(
-        <div className="min-h-fit text-gray-900 flex flex-col justify-start px-6 py-12">
+        <div id="experience" className="min-h-fit text-gray-900 flex flex-col justify-start px-6 py-12">
             {/* Experience section */}
             <div className="w-full flex flex-col gap-2">
                 <div className="flex items-center gap-2">

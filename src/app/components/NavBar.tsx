@@ -17,10 +17,10 @@ const NavBar = () => {
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex space-x-10 text-lg font-semibold">
-                        <Link href="/about" className="text-gray-600 hover:text-blue-500">About</Link>
-                        <Link href="/Experience" className="text-gray-600 hover:text-blue-500">Experience</Link>
-                        <Link href="/Projects" className="text-gray-600 hover:text-blue-500">Projects</Link>
-                        <Link href="/Contact" className="text-gray-600 hover:text-blue-500">Contact</Link>
+                        <Link href="#about" className="text-gray-600 hover:text-blue-500">About</Link>
+                        <Link href="#experience" className="text-gray-600 hover:text-blue-500">Experience</Link>
+                        <Link href="#project" className="text-gray-600 hover:text-blue-500">Projects</Link>
+                        <Link href="#contact" className="text-gray-600 hover:text-blue-500">Contact</Link>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -38,10 +38,10 @@ const NavBar = () => {
             {isOpen && (
                 <div className="md:hidden shadow-md">
                     <div className="flex flex-col items-center space-y-4 py-4">
-                        <Link href="/about" className="text-gray-600 hover:text-blue-500" onClick={() => setIsOpen(false)}>About</Link>
-                        <Link href="/Experience" className="text-gray-600 hover:text-blue-500" onClick={() => setIsOpen(false)}>Experience</Link>
-                        <Link href="/Projects" className="text-gray-600 hover:text-blue-500" onClick={() => setIsOpen(false)}>Projects</Link>
-                        <Link href="/Contact" className="text-gray-600 hover:text-blue-500" onClick={() => setIsOpen(false)}>Contact</Link>
+                        <Link href="#about" className="text-gray-600 hover:text-blue-500" onClick={() => setIsOpen(false)}>About</Link>
+                        <Link href="#experience" className="text-gray-600 hover:text-blue-500" onClick={() => setIsOpen(false)}>Experience</Link>
+                        <Link href="#project" className="text-gray-600 hover:text-blue-500" onClick={() => setIsOpen(false)}>Projects</Link>
+                        <Link href="#contact" className="text-gray-600 hover:text-blue-500" onClick={() => setIsOpen(false)}>Contact</Link>
                     </div>
                 </div>
             )}

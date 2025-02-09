@@ -5,7 +5,7 @@ import { FaGithub } from "react-icons/fa"
 
 const Project = () => {
     return(
-        <div className="min-h-fit text-gray-900 flex flex-col justify-start px-6 py-12">
+        <div id="project" className="min-h-fit text-gray-900 flex flex-col justify-start px-6 py-12">
             {/* Project section */}
             <div className="w-full flex flex-col gap-2">
                 <div className="flex items-center gap-2">
