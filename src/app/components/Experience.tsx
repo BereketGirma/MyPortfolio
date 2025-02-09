@@ -1,6 +1,6 @@
 "use client"
 
-import { act, useState } from "react";
+import { useState } from "react";
 import { experienceContent } from "../data/Experience"
 import { FaChevronRight } from "react-icons/fa"
 
@@ -26,16 +26,16 @@ const Experience = () => {
                     <span className="flex-1 bg-blue-400 h-0.5 md:w-1/2 md:flex-none"></span>
                 </div>
 
-                <div className="flex flex-col md:flex-row w-full gap-4">
-                    <div className="flex overflow-x-auto md:flex-col text-gray-600 text-lg">
+                <div className="flex max-lg:flex-col w-full gap-4 md:items-center">
+                    <div className="flex overflow-x-auto lg:flex-col text-gray-700 text-lg font-semibold">
                         {Object.keys(experienceContent).map((job: string, index: number) => (
                                 <button 
                                     key={index}
-                                    className={`w-full text-start whitespace-nowrap px-4 py-2 text-lg font-medium max-md:border-b-2 md:border-l-2 transition-all duration-300
+                                    className={`w-full md:w-fit text-start sm:text-center whitespace-nowrap px-4 py-2 max-lg:border-b-2 lg:border-l-2 transition-all duration-300
                                             ${
                                                 activeTab === job
                                                     ? "border-blue-500 text-blue-600 bg-blue-500/30"
-                                                    : "border-transparent text-gray-500 hover:text-blue-600 hover:bg-blue-500/30"
+                                                    : "border-transparent hover:text-blue-600 hover:bg-blue-500/30"
                                             }`}
                                     onClick={() => setActiveTab(job)}
                                 >
