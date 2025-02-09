@@ -26,7 +26,7 @@ const Experience = () => {
                     <span className="flex-1 bg-blue-400 h-0.5 md:w-1/2 md:flex-none"></span>
                 </div>
 
-                <div className="flex max-lg:flex-col w-full gap-4 md:items-center">
+                <div className="flex max-lg:flex-col w-full gap-4 md:items-start">
                     <div className="flex overflow-x-auto lg:flex-col text-gray-700 text-lg font-semibold">
                         {Object.keys(experienceContent).map((job: string, index: number) => (
                                 <button 
@@ -44,7 +44,7 @@ const Experience = () => {
                             ))}
                     </div>
 
-                    <div className="shadow-lg backdrop-blur-md bg-white/30 border-white w-fit rounded-md">
+                    <div className="shadow-lg backdrop-blur-md bg-white/30 border-white flex-1 rounded-md">
                         <div className="flex flex-col text-gray-700 px-4 py-4 space-y-2">
                             <h2 className="font-semibold text-2xl">{title}</h2>
                             <p>{time}</p>
