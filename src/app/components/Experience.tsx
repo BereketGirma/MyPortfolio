@@ -31,7 +31,7 @@ const Experience = () => {
                         {Object.keys(experienceContent).map((job: string, index: number) => (
                                 <button 
                                     key={index}
-                                    className={`w-full md:w-fit text-start sm:text-center whitespace-nowrap px-4 py-2 max-lg:border-b-2 lg:border-l-2 transition-all duration-300
+                                    className={`w-full text-start max-md:text-center whitespace-nowrap px-4 py-2 max-lg:border-b-2 lg:border-l-2 transition-all duration-300
                                             ${
                                                 activeTab === job
                                                     ? "border-blue-500 text-blue-600 bg-blue-500/30"

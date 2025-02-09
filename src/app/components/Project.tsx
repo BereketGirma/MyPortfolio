@@ -3,15 +3,6 @@
 import { projectContent } from "../data/Project";
 import { FaGithub } from "react-icons/fa"
 
-interface ProjectContentType {
-    [key: string]: {
-        title: string;
-        description: string;
-        softwares: string[];
-        github: string;
-    };
-}
-
 const Project = () => {
     return(
         <div className="min-h-fit text-gray-900 flex flex-col justify-start px-6 py-12">
@@ -27,7 +18,7 @@ const Project = () => {
                 {Object.keys(projectContent).map((project, index) => (
                     <div 
                         key={index} 
-                        className="flex flex-col px-4 py-4 rounded-md backdrop-blur-md bg-white/30 border-white gap-2 shadow-gray-900 hover:shadow-2xl hover:-translate-y-1 transition duration-300"
+                        className="flex flex-col px-4 py-4 rounded-md backdrop-blur-md bg-white/30 border-white gap-2 shadow-gray-900 md:hover:shadow-2xl md:hover:-translate-y-1 transition duration-300"
                     >
                         {/* Project title */}
                         <h2 className="font-semibold text-2xl">
