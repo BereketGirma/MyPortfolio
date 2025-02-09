@@ -7,7 +7,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     return(
-        <nav className="shadow-md fixed w-full z-10">
+        <nav className="shadow-lg fixed w-full z-10 backdrop-blur-md bg-white/30 border-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
@@ -36,7 +36,7 @@ const NavBar = () => {
             </div>
             {/* Mobile Menu Dropdown */}
             {isOpen && (
-                <div className="bg-white md:hidden shadow-md">
+                <div className="md:hidden shadow-md">
                     <div className="flex flex-col items-center space-y-4 py-4">
                         <Link href="/about" className="text-gray-600 hover:text-blue-500" onClick={() => setIsOpen(false)}>About</Link>
                         <Link href="/Experience" className="text-gray-600 hover:text-blue-500" onClick={() => setIsOpen(false)}>Experience</Link>
