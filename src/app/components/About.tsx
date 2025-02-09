@@ -15,7 +15,7 @@ const About = () => {
             </div>
 
             {/* About me section */}
-            <div className="w-full flex flex-col justify-center gap-1">
+            <div className="w-full flex flex-col justify-center gap-2">
                 <div className="flex items-center gap-2">
                     <h1 className="text-4xl text-gray-900 leading-relaxed font-semibold">About Me</h1>
                     <span className="flex-1 bg-blue-400 h-0.5 md:w-1/2 md:flex-none"></span>

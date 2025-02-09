@@ -1,5 +1,5 @@
 export const aboutContent = {
-    heading: "Hi, I'm",
+    heading: "Hi, I'm ",
     name: "Bereket",
     intro: "I'm currently a junior Computer Science student at Minnesota State Univeristy, Mankato with an expected graduation of May 2026.",
     description: [
