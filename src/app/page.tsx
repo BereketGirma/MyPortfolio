@@ -10,6 +10,10 @@ export default function Home() {
       <Experience />
       <Project />
       <Contact />
+
+      <footer className="text-gray-600 py-6 text-center">
+          <p>Designed & Built by Bereket Girma</p>
+      </footer>
     </div>
   );
 }
