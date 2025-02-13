@@ -16,7 +16,7 @@ export const experienceContent = {
 
     job2 : {
         button: 'MavPASS-CIS',
-        title: 'MavPass Leader for CIS 121(Intro to programming)',
+        title: 'MavPASS Leader for CIS 121(Intro to programming)',
         time: 'January 2024 - May 2024',
         tasks:[
             `Supported over 100 students in academic sessions focusing on programming concepts and course material`,
@@ -26,7 +26,7 @@ export const experienceContent = {
         },
     job3 : {
         button: 'MavPASS-PHY',
-        title: 'MavPass Leader for PHY211(General physics)',
+        title: 'MavPASS Leader for PHY211(General physics)',
         time: 'August 2023 - December 2024',
         tasks:[
             `Supported over 40 students in academic sessions focusing on physics concepts and course material`,
