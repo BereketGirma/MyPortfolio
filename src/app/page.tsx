@@ -11,7 +11,7 @@ export default function Home() {
       <Project />
       <Contact />
 
-      <footer className="text-gray-600 py-6 text-center">
+      <footer className="text-white/60 py-6 text-center">
           <p>Designed & Built by Bereket Girma</p>
       </footer>
     </div>

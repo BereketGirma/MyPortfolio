@@ -7,20 +7,20 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     return(
-        <nav className="shadow-lg fixed w-full z-10 backdrop-blur-md bg-white/30 border-white">
+        <nav className="shadow-lg fixed w-full z-10 backdrop-blur-3xl text-gray-800 bg-white/50 border-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
-                    <div className="text-2xl font-bold text-gray-900">
+                    <div className="text-2xl font-bold ">
                         <Link href="/">Bereket Girma | Portfolio</Link>
                     </div>
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex space-x-10 text-lg font-semibold">
-                        <Link href="#about" className="text-gray-600 hover:text-blue-500">About</Link>
-                        <Link href="#experience" className="text-gray-600 hover:text-blue-500">Experience</Link>
-                        <Link href="#project" className="text-gray-600 hover:text-blue-500">Projects</Link>
-                        <Link href="#contact" className="text-gray-600 hover:text-blue-500">Contact</Link>
+                        <Link href="#about" className="hover:text-blue-500">About</Link>
+                        <Link href="#experience" className="hover:text-blue-500">Experience</Link>
+                        <Link href="#project" className="hover:text-blue-500">Projects</Link>
+                        <Link href="#contact" className="hover:text-blue-500">Contact</Link>
                     </div>
 
                     {/* Mobile Menu Button */}

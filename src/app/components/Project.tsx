@@ -5,16 +5,16 @@ import { FaGithub } from "react-icons/fa"
 
 const Project = () => {
     return(
-        <div id="project" className="min-h-fit text-gray-900 flex flex-col justify-start px-6 py-12">
+        <div id="project" className="min-h-fit text-white flex flex-col justify-start px-6 py-12">
             {/* Project section */}
             <div className="w-full flex flex-col gap-2">
                 <div className="flex items-center gap-2">
-                    <h1 className="text-4xl text-gray-900 leading-relaxed font-semibold">Project</h1>
+                    <h1 className="text-4xl leading-relaxed font-semibold">Project</h1>
                     <span className="flex-1 bg-blue-400 h-0.5 md:w-1/2 md:flex-none"></span>
                 </div>
             </div>
 
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 text-gray-700">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {Object.keys(projectContent).map((project, index) => (
                     <div 
                         key={index} 
@@ -35,7 +35,7 @@ const Project = () => {
                             {/* Tech Stack(Softwares) */}
                             <div className="flex flex-wrap gap-2">
                                 {projectContent[project as keyof typeof projectContent].softwares.map((software, i) => (
-                                    <span className="text-sm px-3 py-1 bg-blue-400/30 rounded-2xl border border-blue-700" key={i}>
+                                    <span className="text-sm px-3 py-1 bg-blue-900/40 rounded-2xl border border-blue-400" key={i}>
                                         {software}
                                     </span>
                                 ))}
