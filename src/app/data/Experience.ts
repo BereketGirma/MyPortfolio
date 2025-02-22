@@ -5,11 +5,8 @@ export const experienceContent = {
         time: 'August 2023 - Present',
         tasks:[
             `As an IT Solutions Lead Consultant, I supervised a team of 30+ members, ensuring high performance and seamless collaboration in a fast-paced technical environment.`,
-
             `I provided hardware and software support to over 200 users, proactively troubleshooting issues and implementing solutions that reduced downtime by 15%.`,
-
             `Leveraging TeamViewer and other remote support tools, I efficiently diagnosed and resolved technical issues, leading to a 30% reduction in support ticket resolution time.`,
-
             `Collaborated with cross-functional teams to troubleshoot and resolve technical problems promptly.`
             ]
         },
