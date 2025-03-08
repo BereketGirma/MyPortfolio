@@ -2,7 +2,7 @@
 import React from "react"
 import { aboutContent } from "../data/About"
 import Image from "next/image"
-import image from "../assets/images.png"
+import portrait from "../assets/Portrait.jpg"
 
 const About = () => {
     return(
@@ -30,7 +30,7 @@ const About = () => {
 
                     <div className="max-lg:hidden lg:w-full items-center justify-center">
                         <Image
-                            src={image}
+                            src={portrait}
                             alt="placeholder"
                             width={500}
                             height={800}
