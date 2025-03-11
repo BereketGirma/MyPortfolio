@@ -1,7 +1,7 @@
 export const aboutContent = {
     heading: "Hi, I'm ",
     name: "Bereket",
-    intro: "I'm currently a junior Computer Science student at Minnesota State Univeristy, Mankato with an expected graduation of May 2026.",
+    intro: "I'm currently a junior Computer Science student at Minnesota State University, Mankato with an expected graduation of May 2026.",
     description: [
         `I am passionate about software engineering, mobile app development, and web development. 
         Currently, I am honing my skills through various projects, including full-stack development 

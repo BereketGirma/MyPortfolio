@@ -1,9 +1,9 @@
 export const projectContent = {
     project1: {
         title: "AutoShift",
-        description: `AutoShift is a cross platform desktop application designed to automate timesheet entries for Minnesota State Univeristy, Mankato. Built with TypeScript, Electron, and React
+        description: `AutoShift is a cross platform desktop application designed to automate timesheet entries for Minnesota State University, Mankato. Built with TypeScript, Electron, and React
         using Vite framework, it streamlines the process of logging work hours by automating input into the university's timesheet website. AutoShift utilizes Selenium with ChromeDriver for 
-        automation, ensuring accuracy and efficieny while reducing manual effort. The app supports Windows and macOS, and operates after the user manually signs in, making it a seamless tool for 
+        automation, ensuring accuracy and efficiency while reducing manual effort. The app supports Windows and macOS, and operates after the user manually signs in, making it a seamless tool for 
         improving workflow and productivity.`,
         softwares: ["Electron", "React + Vite", "Typescript", "Selenium"],
         github: "https://github.com/BereketGirma/AutoShift"
@@ -22,10 +22,10 @@ export const projectContent = {
 
     project3 : {
         title: "Lob-Bot",
-        description: `LobBot is a vertisile Telegram bot developed using Telegram API.
+        description: `LobBot is a versatile Telegram bot developed using Telegram API.
             It enhances your Telegram experience by offering features such as searching
-            for information, managing messages,sharing user status and more. Perfect for 
-            both practical tasks and enjoyment, LOB-BOT makes interacting on Telegram more 
+            for information, managing messages, sharing user status and more. Perfect for 
+            both practical tasks and enjoyment, Lob-Bot makes interacting on Telegram more 
             efficient and enjoyable.`,
         softwares: ["Telegram-API", "Python"],
         github: "https://github.com/BereketGirma/LobBot"
@@ -34,9 +34,9 @@ export const projectContent = {
     project4: {
         title: "Maverick Maps",
         description: `Maverick Maps is a tool that is built for students, faculty, 
-            staff and vistors to have an easier time navigating through the campus of 
+            staff and visitors to have an easier time navigating through the campus of 
             Minnesota State University,Mankato. It is an app built with React-Native 
-            along side Unity which displays a 3D Map of the campus layout. It is an
+            alongside Unity which displays a 3D Map of the campus layout. It is an
             easy access tool with user friendly UI design.`,
         softwares: ["TypeScript", "React", "Unity"],
         github: "https://github.com/WayfindingWizards/WayfindingAppF24"
@@ -46,7 +46,7 @@ export const projectContent = {
         title: "Shift Exporter",
         description: `Shift Exporter is a standalone desktop application for Windows and macOS, designed to automate the generation of shift schedules into Excel spreadsheets
             for the Minnesota State University IT Solutions team. Built using Java, JavaFX and Gradle, the application streamlines shift management by extracting and organizing work schedules
-            efficiently. It features a user-friendly interface, cross platform compaatibility and seamless Excel ingratiion. By reducing manual data entry, Shift Exporter enhances productivity 
+            efficiently. It features a user-friendly interface, cross platform compatibility and seamless Excel integration. By reducing manual data entry, Shift Exporter enhances productivity 
             and accuracy in managing shift records`,
         softwares: ["Java"],
         github: "https://github.com/MrKylox/TeamsShiftExporter"
@@ -54,8 +54,8 @@ export const projectContent = {
 
     project6: {
         title: "My Portfolio",
-        description: `This portfolio is a dynamic way to showcase my skills, projects and accomplishmnets in software development. Built from scratch using Next.js and TailwindCSS,
-        it highlights my technical expertise and creative approach to probem-solving. The portfolio features and collection of personal and academic projects that demonstrate my knowledge in
+        description: `This portfolio is a dynamic way to showcase my skills, projects and accomplishments in software development. Built from scratch using Next.js and TailwindCSS,
+        it highlights my technical expertise and creative approach to problem-solving. The portfolio features a collection of personal and academic projects that demonstrate my knowledge in
         diverse technologies.`,
         softwares: ["Next.js", "TypeScript", "Tailwind CSS"],
         github: "https://github.com/BereketGirma/MyPortfolio"
