@@ -109,7 +109,7 @@ const About = () => {
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-[#3e5c76]/20 to-[#748cab]/20" />
                             <Image
-                                src="/portrait.JPG"
+                                src="/portrait.png"
                                 alt="Bereket Girma - Computer Science Student"
                                 fill
                                 className="object-cover"
