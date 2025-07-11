@@ -1,8 +1,8 @@
 "use client"
 import React from "react"
-import { aboutContent } from "../data/About"
+import { aboutContent } from "@/data/About"
 import Image from "next/image"
-import portrait from "../assets/Portrait.jpg"
+import portrait from "@/assets/images.png"
 
 // Framer motion
 import { motion, Variants } from "framer-motion"
