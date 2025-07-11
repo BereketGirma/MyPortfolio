@@ -10,9 +10,6 @@ import { motion, Variants } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
-// Icons
-import { ArrowRight } from "lucide-react"
-
 const About = () => {
     const container = {
         hidden: { opacity: 0 },
