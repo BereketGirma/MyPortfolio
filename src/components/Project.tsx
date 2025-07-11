@@ -9,7 +9,7 @@ import { projects } from "@/data/Project";
 
 // Icons
 import { FaGithub } from "react-icons/fa"
-import { Github, ExternalLink, X } from "lucide-react";
+import { ExternalLink, X } from "lucide-react";
 
 // Framer motion
 import { motion, AnimatePresence } from "framer-motion" 
@@ -35,7 +35,7 @@ const Project = () => {
                 <h2 className="text-3xl md:text-4xl font-bold text-[#f0ebd8]">Projects</h2>
                 <div className="w-20 h-1 bg-[#748cab]"></div>
                 <p className="text-[#f0ebd8] max-w-2xl">
-                    A selection of projects I've worked on. Click on a project to learn more.
+                    A selection of projects I&apos;ve worked on. Click on a project to learn more.
                 </p>
             </motion.div>
 
@@ -127,7 +127,7 @@ const Project = () => {
                         <div className="flex flex-wrap gap-4">
                         <Button className="bg-[#3e5c76] hover:bg-[#748cab] text-[#f0ebd8]" asChild>
                             <a href={projects[selectedId - 1].githubLink} target="_blank" rel="noopener noreferrer">
-                            <Github className="mr-2 h-4 w-4" />
+                            <FaGithub className="mr-2 h-4 w-4" />
                             View Code
                             </a>
                         </Button>

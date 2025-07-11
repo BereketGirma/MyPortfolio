@@ -57,12 +57,12 @@ const About = () => {
                             variants={item}
                             className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#f0ebd8] leading-tight"
                         >
-                            Hi, I'm <span className="text-[#748cab]">{aboutContent.name}</span>
+                            Hi, I&apos;m <span className="text-[#748cab]">{aboutContent.name}</span>
                             <br />A Computer Science Student at Minnesota State University, Mankato
                         </motion.h1>
 
                         <motion.p variants={item} className="text-lg md:text-xl text-[#f0ebd8]/80 max-w-2xl">
-                            I'm a full-stack developer specializing in building exceptional digital experiences. Currently, I'm focused
+                            I&apos;m a full-stack developer specializing in building exceptional digital experiences. Currently, I&apos;m focused
                             on building accessible, human-centered products.
                         </motion.p>
 

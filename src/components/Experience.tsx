@@ -1,8 +1,5 @@
 "use client"
 
-import { useState } from "react";
-import { GoDotFill } from "react-icons/go"
-
 // Framer motion
 import { motion } from "framer-motion"
 

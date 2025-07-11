@@ -6,11 +6,10 @@ import { useState, useEffect } from "react";
 import Link from "next/link"
 
 // Icons
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { Menu } from "lucide-react";
 
 // Framer motion
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll } from "framer-motion"
 
 // Components
 import { Button } from "@/components/ui/button";
