@@ -2,7 +2,7 @@
 import React from "react"
 import { aboutContent } from "@/data/About"
 import Image from "next/image"
-import portrait from "@/assets/images.png"
+import portrait from "@/assets/portrait.jpg"
 
 // Framer motion
 import { motion, Variants } from "framer-motion"
