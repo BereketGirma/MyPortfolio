@@ -2,7 +2,6 @@
 import React from "react"
 import { aboutContent } from "@/data/About"
 import Image from "next/image"
-import portrait from "@/assets/portrait.jpg"
 
 // Framer motion
 import { motion, Variants } from "framer-motion"
@@ -43,6 +42,15 @@ const About = () => {
         },
     }
 
+    const downloadResume = () => {
+        const link = document.createElement("a");
+        link.href = "/Bereket_Girma_Resume.pdf"; // Path relative to public folder
+        link.download = "Bereket_Girma_Resume.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return(
         <section id="about" className="min-h-screen flex items-center">
             <div className="w-full max-w-5xl mx-auto">
@@ -67,11 +75,7 @@ const About = () => {
                         </motion.p>
 
                         <motion.div variants={item} className="flex flex-wrap gap-4">
-                            <Button className="bg-[#3e5c76] hover:bg-[#748cab] text-[#f0ebd8]">
-                                View My Work
-                                <ArrowRight className="ml-2 h-4 w-4" />
-                            </Button>
-                            <Button variant="outline" className="border-[#748cab] text-[#f0ebd8] hover:bg-[#1d2d44]/50">
+                            <Button variant="outline" className="border-[#748cab] text-[#f0ebd8] hover:bg-[#1d2d44]/50" onClick={downloadResume}>
                                 Download Resume
                             </Button>
                         </motion.div>
@@ -108,7 +112,7 @@ const About = () => {
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-[#3e5c76]/20 to-[#748cab]/20" />
                             <Image
-                                src={portrait}
+                                src="/portrait.JPG"
                                 alt="Bereket Girma - Computer Science Student"
                                 fill
                                 className="object-cover"
