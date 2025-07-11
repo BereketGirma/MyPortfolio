@@ -1,7 +1,5 @@
 "use client"
 import React from "react"
-import { aboutContent } from "@/data/About"
-import Image from "next/image"
 
 // Framer motion
 import { motion, Variants } from "framer-motion"
@@ -9,6 +7,13 @@ import { motion, Variants } from "framer-motion"
 // Components
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+
+// Data
+import { aboutContent } from "@/data/About"
+
+// Image
+import Image from "next/image"
+import portrait from "@/assets/portrait.png"
 
 const About = () => {
     const container = {
@@ -67,8 +72,7 @@ const About = () => {
                         </motion.h1>
 
                         <motion.p variants={item} className="text-lg md:text-xl text-[#f0ebd8]/80 max-w-2xl">
-                            I&apos;m a full-stack developer specializing in building exceptional digital experiences. Currently, I&apos;m focused
-                            on building accessible, human-centered products.
+                            {aboutContent.description}
                         </motion.p>
 
                         <motion.div variants={item} className="flex flex-wrap gap-4">
@@ -109,7 +113,7 @@ const About = () => {
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-[#3e5c76]/20 to-[#748cab]/20" />
                             <Image
-                                src="/portrait.png"
+                                src={portrait}
                                 alt="Bereket Girma - Computer Science Student"
                                 fill
                                 className="object-cover"
