@@ -1,6 +1,23 @@
 export const projects = [
     {
         id: 1,
+        title: "SAFEHR",
+        shortDesc: `SAFEHR is a web-based EHR platform used to support nursing education and simulation. It allows students to document and update patient care in a realistic, hands-on learning environment.`, 
+        description: `SAFEHR (Simulation Analytics Family-Focused Electronic Health Record) is a full-stack Electronic Health Record platform built to support nursing simulation and education at Minnesota State University, Mankato. 
+        Our team collaborates directly with nursing faculty to design workflows that reflect real clinical environments while remaining tailored for student learning. 
+        The system implements secure role-based permissions for Admins, Educators, and Students, allowing controlled access to patient cases and documentation tools.
+        Real-time updates powered by WebSockets enable synchronized actions during multi-user simulation sessions. 
+        The platform is deployed using Docker with separate dev and production environments and integrates MongoDB to efficiently manage patient and simulation data. 
+        Automated testing maintains over 85% coverage, ensuring reliability of critical functionality as the project continues to grow based on ongoing feedback.`,
+        tags: ["Next.js", "Django", "MongoDB", "SQLite", "Python", "TypeScript"],
+        githubLink: "",
+        image: "/project/SAFEHR.png",
+        demoAvailable: false,
+        demoLink: "",
+    },
+
+    {
+        id: 2,
         title: "AutoShift",
         shortDesc: "AutoShift is a cross-platform desktop app that automates timesheet entries for MSU Mankato using Electron, React, and Selenium.", 
         description: `AutoShift is a cross platform desktop application designed to automate timesheet entries for Minnesota State University, Mankato. Built with TypeScript, Electron, and React
@@ -9,13 +26,13 @@ export const projects = [
         improving workflow and productivity.`,
         tags: ["Electron", "React + Vite", "Typescript", "Selenium"],
         githubLink: "https://github.com/BereketGirma/AutoShift",
-        image: "/src/assets/images.png",
+        image: "/project/AutoShift.png",
         demoAvailable: false,
         demoLink: "",
     },
 
     {
-        id: 2,
+        id: 3,
         title: "PatrolCam",
         shortDesc: "PatrolCam is a web platform for secure live surveillance. As backend lead, I built the core infrastructure with authentication and MongoDB.",
         description: `PatrolCam is a web-based platform designed to provide live-streaming surveillance solutions. 
@@ -25,13 +42,13 @@ export const projects = [
             PatrolCam serves as an efficient and scalable solution for real-time surveillance streaming.`,
         tags: ["React", "MongoDB", "JavaScript", "Express"],
         githubLink: "https://github.com/Bursch-Industries/PatrolCam",
-        image: "/src/assets/images.png",
+        image: "/project/PatrolCam.png",
         demoAvailable: false,
         demoLink: "",
     },
 
     {
-        id: 3,
+        id: 4,
         title: "Lob-Bot",
         shortDesc: "LobBot is a Telegram bot that streamlines chatting with features like info search, message management, and status sharing.",
         description: `LobBot is a versatile Telegram bot developed using Telegram API.
@@ -41,13 +58,13 @@ export const projects = [
             efficient and enjoyable.`,
         tags: ["Telegram-API", "Python"],
         githubLink: "https://github.com/BereketGirma/LobBot",
-        image: "/src/assets/images.png",
+        image: "/project/LobBot.png",
         demoAvailable: false,
         demoLink: "",
     },
 
     {
-        id: 4,
+        id: 5,
         title: "Maverick Maps",
         shortDesc: "Maverick Maps is a React Native and Unity app that provides a 3D campus map of MSU Mankato, making navigation easy for students, staff, and visitors.",
         description: `Maverick Maps is a tool that is built for students, faculty, 
@@ -57,22 +74,7 @@ export const projects = [
             easy access tool with user friendly UI design.`,
         tags: ["TypeScript", "React", "Unity"],
         githubLink: "https://github.com/WayfindingWizards/WayfindingAppF24",
-        image: "/src/assets/images.png",
-        demoAvailable: false,
-        demoLink: "",
-    },
-
-    {
-        id: 5,
-        title: "Shift Exporter",
-        shortDesc: "Shift Exporter is a cross-platform app that automates exporting shift schedules to Excel for MSU IT Solutions.",
-        description: `Shift Exporter is a standalone desktop application for Windows and macOS, designed to automate the generation of shift schedules into Excel spreadsheets
-            for the Minnesota State University IT Solutions team. Built using Java, JavaFX and Gradle, the application streamlines shift management by extracting and organizing work schedules
-            efficiently. It features a user-friendly interface, cross platform compatibility and seamless Excel integration. By reducing manual data entry, Shift Exporter enhances productivity 
-            and accuracy in managing shift records`,
-        tags: ["Java"],
-        githubLink: "https://github.com/MrKylox/TeamsShiftExporter",
-        image: "/src/assets/images.png",
+        image: "/project/Wayfinder.png",
         demoAvailable: false,
         demoLink: "",
     },
@@ -86,7 +88,7 @@ export const projects = [
         diverse technologies.`,
         tags: ["Next.js", "TypeScript", "Tailwind CSS"],
         githubLink: "https://github.com/BereketGirma/MyPortfolio",
-        image: "/src/assets/images.png",
+        image: "/project/Portfolio.png",
         demoAvailable: false,
         demoLink: "",
     },

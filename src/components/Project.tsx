@@ -18,6 +18,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 import image from "@/assets/images.png"
 
@@ -57,7 +58,7 @@ const Project = () => {
                         >
                             <div className="relative h-48 overflow-hidden">
                                 <Image
-                                    src={image || "/placeholder.svg"}
+                                    src={project.image || image || "/placeholder.svg"}
                                     alt={project.title}
                                     fill
                                     className="object-cover transition-transform duration-500 hover:scale-105"
@@ -92,14 +93,14 @@ const Project = () => {
                     onClick={() => setSelectedId(null)}
                 >
                     <motion.div
-                    layoutId={`project-${selectedId}`}
-                    className="w-full max-w-3xl bg-[#1d2d44]/70 backdrop-blur-md border border-[#3e5c76]/30 rounded-xl overflow-hidden"
-                    onClick={(e) => e.stopPropagation()}
+                        layoutId={`project-${selectedId}`}
+                        className="w-full max-w-3xl bg-[#1d2d44]/70 backdrop-blur-md border border-[#3e5c76]/30 rounded-xl overflow-hidden"
+                        onClick={(e) => e.stopPropagation()}
                     >
                     <div className="relative">
-                        <div className="relative h-64">
+                        <div className="relative h-56">
                         <Image
-                            src={image || "/placeholder.svg"}
+                            src={projects[selectedId - 1].image || image || "/placeholder.svg"}
                             alt={projects[selectedId - 1].title}
                             fill
                             className="object-cover"
@@ -117,20 +118,24 @@ const Project = () => {
                     <div className="p-6">
                         <h2 className="text-2xl font-bold text-[#f0ebd8] mb-2">{projects[selectedId - 1].title}</h2>
                         <div className="flex flex-wrap gap-2 mb-4">
-                        {projects[selectedId - 1].tags.map((tag) => (
-                            <Badge key={tag} className="bg-[#3e5c76]/40 text-[#f0ebd8] border-[#748cab]/50">
-                            {tag}
-                            </Badge>
-                        ))}
+                            {projects[selectedId - 1].tags.map((tag) => (
+                                <Badge key={tag} className="bg-[#3e5c76]/40 text-[#f0ebd8] border-[#748cab]/50">
+                                {tag}
+                                </Badge>
+                            ))}
                         </div>
-                        <p className="text-[#f0ebd8]/80 mb-6">{projects[selectedId - 1].description}</p>
+                        <ScrollArea className="h-44 w-full rounded-md">
+                            <p className="text-[#f0ebd8]/80 mb-6">{projects[selectedId - 1].description}</p>
+                        </ScrollArea>
                         <div className="flex flex-wrap gap-4">
-                        <Button className="bg-[#3e5c76] hover:bg-[#748cab] text-[#f0ebd8]" asChild>
-                            <a href={projects[selectedId - 1].githubLink} target="_blank" rel="noopener noreferrer">
-                            <FaGithub className="mr-2 h-4 w-4" />
-                            View Code
-                            </a>
-                        </Button>
+                        {projects[selectedId - 1].githubLink && (
+                            <Button className="bg-[#3e5c76] hover:bg-[#748cab] text-[#f0ebd8]" asChild>
+                                <a href={projects[selectedId - 1].githubLink} target="_blank" rel="noopener noreferrer">
+                                <FaGithub className="mr-2 h-4 w-4" />
+                                View Code
+                                </a>
+                            </Button>
+                        )}
                         {projects[selectedId - 1].demoAvailable && (
                             <Button variant="outline" className="border-[#748cab] text-[#f0ebd8] hover:bg-[#3e5c76]/30" asChild>
                             <a href={projects[selectedId - 1].demoLink} target="_blank" rel="noopener noreferrer">

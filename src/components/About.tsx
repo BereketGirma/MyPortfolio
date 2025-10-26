@@ -5,7 +5,7 @@ import React from "react"
 import { motion, Variants } from "framer-motion"
 
 // Components
-import { Badge } from "@/components/ui/badge"
+// import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
 // Data
@@ -13,7 +13,6 @@ import { aboutContent } from "@/data/About"
 
 // Image
 import Image from "next/image"
-import portrait from "@/assets/portrait.png"
 
 const About = () => {
     const container = {
@@ -58,11 +57,11 @@ const About = () => {
             <div className="w-full max-w-5xl mx-auto">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <motion.div variants={container} initial="hidden" animate="show" className="space-y-4">
-                        <motion.div variants={item} initial="hidden" animate="show">
+                        {/* <motion.div variants={item} initial="hidden" animate="show">
                             <Badge className="px-4 py-1 text-sm bg-[#1d2d44]/50 text-[#f0ebd8] border-[#3e5c76]/50 backdrop-blur-sm">
                                 Graduating May 2026
                             </Badge>
-                        </motion.div>
+                        </motion.div> */}
                         <motion.h1
                             variants={item}
                             className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#f0ebd8] leading-tight"
@@ -113,7 +112,7 @@ const About = () => {
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-[#3e5c76]/20 to-[#748cab]/20" />
                             <Image
-                                src={portrait}
+                                src={"/portrait.png"}
                                 alt="Bereket Girma - Computer Science Student"
                                 fill
                                 className="object-cover"

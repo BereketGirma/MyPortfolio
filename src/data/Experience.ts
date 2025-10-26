@@ -10,6 +10,16 @@ export const experiences = [
     },
 
     {
+        title: 'Software Engineer Intern (Unpaid)',
+        company: 'Client sponsored project',
+        period: 'May 2024 - Aug 2024',
+        description:`
+            Built cross-platform automation tools that eliminated manual scheduling and greatly improved workflow for 30+ IT staff. 
+            My work optimized both shift management and communication systems using Java, Gradle, and Microsoft Teams.
+        `
+    },
+
+    {
         title: 'MavPASS Leader for CIS 121(Intro to Programming)',
         company: 'Minnesota State University',
         period: 'January 2024 - May 2024',
