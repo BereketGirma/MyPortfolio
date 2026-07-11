@@ -1,95 +1,119 @@
-export const projects = [
+// -----------------------------------------------------------------------------
+// Projects grid. Each card shows a gradient "cover" with a big letter glyph,
+// a short description, tags, and up to two links (live site + source).
+//
+// To add a project: copy an entry, bump the `index`, pick a `glyph` letter and
+// a two-color gradient (`cover`). Set `live: true` to show the green "in
+// production" dot, and add `liveLink` for anything that is publicly hosted.
+// -----------------------------------------------------------------------------
+
+export interface Project {
+    /** Zero-padded card number, e.g. "001" */
+    index: string
+    /** Single uppercase letter shown large on the cover */
+    glyph: string
+    title: string
+    /** Shows a small green dot when true (project is deployed / in production) */
+    live?: boolean
+    description: string
+    tags: string[]
+    /** Public URL for the hosted app / live demo */
+    liveLink?: string
+    /** Source code URL */
+    githubLink?: string
+    /** Two-color gradient for the cover: `from` → `to` (used as fallback / behind image) */
+    cover: { from: string; to: string }
+    /** Optional banner image (relative to /public). When set, it replaces the glyph. */
+    image?: string
+}
+
+export const projects: Project[] = [
     {
-        id: 1,
+        index: "001",
+        glyph: "S",
         title: "SAFEHR",
-        shortDesc: `SAFEHR is a web-based EHR platform used to support nursing education and simulation. It allows students to document and update patient care in a realistic, hands-on learning environment.`, 
-        description: `SAFEHR (Simulation Analytics Family-Focused Electronic Health Record) is a full-stack Electronic Health Record platform built to support nursing simulation and education at Minnesota State University, Mankato. 
-        Our team collaborates directly with nursing faculty to design workflows that reflect real clinical environments while remaining tailored for student learning. 
-        The system implements secure role-based permissions for Admins, Educators, and Students, allowing controlled access to patient cases and documentation tools.
-        Real-time updates powered by WebSockets enable synchronized actions during multi-user simulation sessions. 
-        The platform is deployed using Docker with separate dev and production environments and integrates MongoDB to efficiently manage patient and simulation data. 
-        Automated testing maintains over 85% coverage, ensuring reliability of critical functionality as the project continues to grow based on ongoing feedback.`,
-        tags: ["Next.js", "Django", "MongoDB", "SQLite", "Python", "TypeScript"],
-        githubLink: "",
+        live: false,
+        description:
+            "Role-based EHR platform for nursing simulation, built with faculty. Admin / Educator / Student permissions, real-time care updates over WebSockets, and 85%+ test coverage.",
+        tags: ["Next.js", "Django", "MongoDB", "TypeScript"],
+        cover: { from: "#1c322d", to: "#3f6f60" },
         image: "/project/SAFEHR.png",
-        demoAvailable: false,
-        demoLink: "",
     },
-
     {
-        id: 2,
+        index: "002",
+        glyph: "T",
+        title: "TableTap",
+        live: true,
+        description:
+            "QR-based table-ordering platform for restaurants — guests scan, browse a live menu, and pay from their phone. Bilingual (English / Amharic) with a real-time kitchen dashboard.",
+        tags: ["React", "Node", "PostgreSQL", "TypeScript"],
+        liveLink: "https://www.table-tap.tech/",
+        cover: { from: "#2a1f3d", to: "#6b4d8f" },
+        image: "/project/TableTap.svg",
+    },
+    {
+        index: "003",
+        glyph: "A",
         title: "AutoShift",
-        shortDesc: "AutoShift is a cross-platform desktop app that automates timesheet entries for MSU Mankato using Electron, React, and Selenium.", 
-        description: `AutoShift is a cross platform desktop application designed to automate timesheet entries for Minnesota State University, Mankato. Built with TypeScript, Electron, and React
-        using Vite framework, it streamlines the process of logging work hours by automating input into the university's timesheet website. AutoShift utilizes Selenium with ChromeDriver for 
-        automation, ensuring accuracy and efficiency while reducing manual effort. The app supports Windows and macOS, and operates after the user manually signs in, making it a seamless tool for 
-        improving workflow and productivity.`,
-        tags: ["Electron", "React + Vite", "Typescript", "Selenium"],
+        description:
+            "Cross-platform desktop app that automates university timesheet entry. Selenium + ChromeDriver drive the browser, cutting 90% of the manual work for staff.",
+        tags: ["Electron", "React", "TypeScript", "Selenium"],
         githubLink: "https://github.com/BereketGirma/AutoShift",
+        cover: { from: "#2d1c12", to: "#b5602a" },
         image: "/project/AutoShift.png",
-        demoAvailable: false,
-        demoLink: "",
     },
-
     {
-        id: 3,
+        index: "004",
+        glyph: "P",
         title: "PatrolCam",
-        shortDesc: "PatrolCam is a web platform for secure live surveillance. As backend lead, I built the core infrastructure with authentication and MongoDB.",
-        description: `PatrolCam is a web-based platform designed to provide live-streaming surveillance solutions. 
-            The project focuses on enabling users to securely access and view live video feeds through a streamlined web interface. As the backend lead, 
-            I mainly developed the backend infrastructure, including implementing user authentication and managing the systems database using MongoDB. 
-            While the project also involves AI integration, the first phase of the project focused on frontend and backend components.
-            PatrolCam serves as an efficient and scalable solution for real-time surveillance streaming.`,
-        tags: ["React", "MongoDB", "JavaScript", "Express"],
+        description:
+            "Live-streaming surveillance dashboard. As backend lead I built authentication, MongoDB schemas, and REST APIs for camera activity logs and user management.",
+        tags: ["React", "Express", "MongoDB", "JavaScript"],
         githubLink: "https://github.com/Bursch-Industries/PatrolCam",
+        cover: { from: "#142231", to: "#2c74a8" },
         image: "/project/PatrolCam.png",
-        demoAvailable: false,
-        demoLink: "",
     },
-
     {
-        id: 4,
-        title: "Lob-Bot",
-        shortDesc: "LobBot is a Telegram bot that streamlines chatting with features like info search, message management, and status sharing.",
-        description: `LobBot is a versatile Telegram bot developed using Telegram API.
-            It enhances your Telegram experience by offering features such as searching
-            for information, managing messages, sharing user status and more. Perfect for 
-            both practical tasks and enjoyment, Lob-Bot makes interacting on Telegram more 
-            efficient and enjoyable.`,
-        tags: ["Telegram-API", "Python"],
-        githubLink: "https://github.com/BereketGirma/LobBot",
-        image: "/project/LobBot.png",
-        demoAvailable: false,
-        demoLink: "",
-    },
-
-    {
-        id: 5,
+        index: "005",
+        glyph: "M",
         title: "Maverick Maps",
-        shortDesc: "Maverick Maps is a React Native and Unity app that provides a 3D campus map of MSU Mankato, making navigation easy for students, staff, and visitors.",
-        description: `Maverick Maps is a tool that is built for students, faculty, 
-            staff and visitors to have an easier time navigating through the campus of 
-            Minnesota State University,Mankato. It is an app built with React-Native 
-            alongside Unity which displays a 3D Map of the campus layout. It is an
-            easy access tool with user friendly UI design.`,
-        tags: ["TypeScript", "React", "Unity"],
+        description:
+            "Interactive 3D campus map for MSU Mankato, built with React Native and Unity. A friendly wayfinding tool for students, staff, and visitors.",
+        tags: ["React Native", "Unity", "TypeScript"],
         githubLink: "https://github.com/WayfindingWizards/WayfindingAppF24",
+        cover: { from: "#14210f", to: "#4f8f30" },
         image: "/project/Wayfinder.png",
-        demoAvailable: false,
-        demoLink: "",
     },
-
     {
-        id: 6,
-        title: "My Portfolio",
-        shortDesc: "This portfolio showcases my software skills and projects using Next.js and TailwindCSS.",
-        description: `This portfolio is a dynamic way to showcase my skills, projects and accomplishments in software development. Built from scratch using Next.js and TailwindCSS,
-        it highlights my technical expertise and creative approach to problem-solving. The portfolio features a collection of personal and academic projects that demonstrate my knowledge in
-        diverse technologies.`,
-        tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+        index: "006",
+        glyph: "L",
+        title: "Lob-Bot",
+        description:
+            "A versatile Telegram bot that searches for info, manages messages, and shares user status — making day-to-day Telegram more efficient and fun.",
+        tags: ["Telegram API", "Python"],
+        githubLink: "https://github.com/BereketGirma/LobBot",
+        cover: { from: "#2d1419", to: "#a23a4c" },
+        image: "/project/BotIcon.jpg",
+    },
+    {
+        index: "007",
+        glyph: "B",
+        title: "This Portfolio",
+        live: true,
+        description:
+            "The site you're reading — an editorial, component-driven portfolio built from scratch with Next.js and a hand-written design system, deployed on GitHub Pages.",
+        tags: ["Next.js", "TypeScript", "CSS"],
+        liveLink: "https://bereketgirma.github.io/MyPortfolio",
         githubLink: "https://github.com/BereketGirma/MyPortfolio",
+        cover: { from: "#1a1813", to: "#46433a" },
         image: "/project/Portfolio.png",
-        demoAvailable: false,
-        demoLink: "",
     },
 ]
+
+/** The "More on GitHub" card that closes out the grid. */
+export const githubCard = {
+    label: "More on GitHub",
+    heading: "Open source & counting",
+    handle: "github.com/BereketGirma",
+    url: "https://github.com/BereketGirma",
+}
