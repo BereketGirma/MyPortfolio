@@ -1,32 +1,124 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: 
-    /* radial-gradient(circle at top left, #9333ea 0%, #3177d3 50%), */
-    linear-gradient(to bottom right, #3177d3, #234f89, #0e1d30);
-  --foreground: #3177d3;
+/* =================================================================
+   Bereket Girma — Portfolio
+   Global CSS is intentionally minimal: it holds only the theme tokens,
+   background/cursor effects, and the JS-toggled state styles that Tailwind
+   utilities can't express. Everything else lives in component classNames.
+   ================================================================= */
+
+/* ---------- THEME TOKENS ---------- */
+:root,
+[data-theme="light"] {
+  --bg:        #f3f1ea;
+  --bg-2:      #ebe8dd;
+  --surface:   #f8f6f0;
+  --ink:       #16150f;
+  --ink-soft:  #3a3830;
+  --ink-mute:  #6f6c5d;
+  --ink-faint: #a8a492;
+  --line:      rgba(22, 21, 15, 0.14);
+  --line-2:    rgba(22, 21, 15, 0.08);
+  --accent:    #ff4d00;
+  --accent-ink:#ffffff;
+  --grain-op:  0.05;
+  --grain-blend: multiply;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background:
-      radial-gradient(circle at top left, rgb(32, 120, 235) 0%, rgba(0, 0, 0, 0) 25%),
-      linear-gradient(to bottom right, #3177d3, #234f89, #040712);
-    --foreground: #3177d3;
-  }
+:root[data-theme="dark"] {
+  --bg:        #100f0c;
+  --bg-2:      #16140f;
+  --surface:   #1a1813;
+  --ink:       #f3f1ea;
+  --ink-soft:  #cecabb;
+  --ink-mute:  #908c7c;
+  --ink-faint: #5d5a4e;
+  --line:      rgba(243, 241, 234, 0.16);
+  --line-2:    rgba(243, 241, 234, 0.08);
+  --accent:    #ff5d1a;
+  --accent-ink:#1a0d05;
+  --grain-op:  0.06;
+  --grain-blend: screen;
 }
 
-body {
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  /* height: 100vh; */
-  background-size: cover;
-  background-attachment: fixed;
-}
-
+/* ---------- BASE ---------- */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 4rem;
+  scroll-padding-top: 90px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+body {
+  transition: background 0.6s ease, color 0.6s ease;
+}
+::selection { background: var(--accent); color: var(--accent-ink); }
+
+/* Suppress transitions during the theme flip so colors don't lag. */
+.__no-transition *, .__no-transition *::before, .__no-transition *::after { transition: none !important; }
+
+/* ---------- BACKGROUND EFFECTS (data-URI grain + reactive glow) ---------- */
+.bg-grain {
+  position: fixed; inset: -50%; pointer-events: none; z-index: 1; opacity: var(--grain-op);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: var(--grain-blend);
+}
+.bg-glow {
+  position: fixed; width: 480px; height: 480px; border-radius: 50%; z-index: 0; pointer-events: none;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 16%, transparent), transparent 66%);
+  filter: blur(48px); opacity: 0.42; left: 0; top: 0;
+  transform: translate3d(var(--mx, 80vw), var(--my, 18vh), 0) translate(-50%, -50%);
+  transition: opacity 0.6s ease;
+}
+@media (prefers-reduced-motion: reduce) { .bg-glow { display: none; } }
+
+/* ---------- CUSTOM CURSOR ---------- */
+.cursor-dot, .cursor-ring { position: fixed; top: 0; left: 0; z-index: 9999; pointer-events: none; border-radius: 50%; mix-blend-mode: difference; }
+.cursor-dot { width: 7px; height: 7px; background: #fff; transform: translate(-50%, -50%); }
+.cursor-ring {
+  width: 34px; height: 34px; border: 1.5px solid #fff; transform: translate(-50%, -50%);
+  transition: width 0.25s ease, height 0.25s ease, background 0.25s ease, opacity 0.25s ease;
+}
+.cursor-ring.hot { width: 56px; height: 56px; background: rgba(255,255,255,0.12); }
+body.has-cursor, body.has-cursor a, body.has-cursor button { cursor: none; }
+@media (hover: none), (prefers-reduced-motion: reduce) { .cursor-dot, .cursor-ring { display: none !important; } }
+
+/* ---------- SCROLL REVEAL (JS toggles .in) ---------- */
+.r { opacity: 0; transform: translateY(34px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.r.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .r { opacity: 1 !important; transform: none !important; } }
+
+/* ---------- NAV state (JS toggles .scrolled / .active) ---------- */
+.nav.scrolled {
+  padding-top: 13px; padding-bottom: 13px;
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
+  backdrop-filter: blur(14px) saturate(1.2);
+  border-bottom: 1px solid var(--line-2);
+}
+/* animated underline for the active nav link */
+.nav-link::after {
+  content: ""; position: absolute; left: 14px; right: 14px; bottom: 3px; height: 2px; background: var(--accent);
+  transform: scaleX(0); transform-origin: left; transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
+}
+.nav-link.active::after { transform: scaleX(1); }
+.nav-link.active { color: var(--ink); }
+.nav-link.active .n { color: var(--accent); }
+
+/* ---------- HERO reveal (JS toggles .loaded) ---------- */
+.reveal-line { display: block; overflow: hidden; }
+.reveal-line > span { display: block; }
+.hero.loaded .reveal-line > span { animation: riseIn 0.95s cubic-bezier(0.16,1,0.3,1) both; }
+.hero.loaded .reveal-line:nth-child(2) > span { animation-delay: 0.09s; }
+@keyframes riseIn { from { transform: translateY(112%); } to { transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .hero.loaded .reveal-line > span { animation: none; } }
+
+/* ---------- LOADER (JS toggles .done) ---------- */
+.loader.done { opacity: 0; visibility: hidden; }
+
+/* ---------- MOBILE MENU (JS toggles .open) ---------- */
+.m-menu { transform: translateY(-100%); transition: transform 0.5s cubic-bezier(0.76,0,0.24,1); }
+.m-menu.open { transform: translateY(0); }
