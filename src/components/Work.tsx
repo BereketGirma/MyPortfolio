@@ -4,6 +4,7 @@
 import type { CSSProperties } from "react"
 import Image from "next/image"
 import { projects, githubCard } from "@/data/Project"
+import { withBasePath } from "@/lib/utils"
 
 const linkClass =
     "group/link inline-flex items-center gap-[6px] font-mono text-[12.5px] font-semibold text-ink-soft transition-colors hover:text-accent"
@@ -32,7 +33,7 @@ const Work = () => {
                             {project.image ? (
                                 <>
                                     <Image
-                                        src={project.image}
+                                        src={withBasePath(project.image)}
                                         alt={`${project.title} preview`}
                                         fill
                                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

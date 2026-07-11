@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Laptop, Camera, Gamepad2 } from "lucide-react"
 import { FaBasketballBall } from "react-icons/fa"
 import { aboutContent } from "@/data/About"
+import { withBasePath } from "@/lib/utils"
 
 const chipBase =
     "absolute z-10 flex h-12 w-12 items-center justify-center rounded-xl border border-line bg-surface text-ink shadow-[0_16px_30px_-12px_rgba(0,0,0,0.4)] opacity-0 transition-all duration-500 [transition-timing-function:cubic-bezier(0.34,1.56,0.64,1)] group-hover:opacity-100"
@@ -47,7 +48,7 @@ const About = () => {
 
                     <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-line bg-bg-2">
                         <Image
-                            src="/portrait.png"
+                            src={withBasePath("/portrait.png")}
                             alt="Bereket Girma"
                             fill
                             sizes="(max-width: 1024px) 320px, 340px"
