@@ -1,109 +1,72 @@
-"use client";
-
-import { useState, useEffect } from "react";
-
-// Nextjs
-import Link from "next/link"
-
-// Icons
-import { Menu } from "lucide-react";
-
-// Framer motion
-import { motion, useScroll } from "framer-motion"
-
-// Components
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetTrigger, SheetContent, SheetTitle } from "@/components/ui/sheet";
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+// Fixed top navigation + full-screen mobile menu.
+// Marker classes (nav, nav-link, n, nav-burger, m-menu) are JS hooks used by
+// SiteEffects for scroll state, active-link highlighting and the mobile menu;
+// their dynamic styles live in globals.css. Everything static is Tailwind.
+import { site } from "@/data/Site"
 
 const NavBar = () => {
-    const [isScrolled, setIsScrolled] = useState(false)
-    const { scrollY } = useScroll()
-    const [open, setOpen] = useState(false)
+    return (
+        <>
+            <header className="nav fixed inset-x-0 top-0 z-[100] flex items-center justify-between border-b border-transparent px-[26px] py-5 transition-[padding,background,border-color] duration-[400ms] md:px-14">
+                <a href="#top" className="flex items-center gap-[9px] font-mono text-base font-bold tracking-[0.06em]">
+                    <span className="h-2 w-2 rounded-full bg-accent animate-blink" />
+                    {site.logo}
+                </a>
 
-    useEffect(() => {
-        const unsubscribe = scrollY.on("change", (y) => {
-        setIsScrolled(y > 50)
-        })
+                <nav className="hidden items-center gap-1 md:flex">
+                    {site.navLinks.map((link) => (
+                        <a
+                            key={link.href}
+                            href={link.href}
+                            className="nav-link relative flex items-baseline gap-[7px] rounded-lg px-[14px] py-2 text-[14.5px] font-semibold text-ink-soft transition-colors hover:text-ink"
+                        >
+                            <span className="n font-mono text-[10.5px] text-ink-faint transition-colors">{link.num}</span>
+                            {link.label}
+                        </a>
+                    ))}
+                </nav>
 
-        return () => unsubscribe()
-    }, [scrollY])
-
-     const navLinks = [
-        { name: "About", href: "#about" },
-        { name: "Experience", href: "#experience" },
-        { name: "Projects", href: "#projects" },
-        { name: "Contact", href: "#contact" },
-    ]
-
-    return(
-        <motion.header
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.5 }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 rounded-lg px-2 ${
-                isScrolled ? "bg-[#3e5c76]/30 backdrop-blur-lg shadow-lg m-2" : "bg-transparent m-5"
-            }`}
-        >
-            <div className="container mx-auto">
-                <div className="flex justify-between items-center h-16 p-2">
-                    {/* Logo */}
-                    <div className="text-2xl font-bold text-[#f0ebd8]">
-                        <Link href="/">Bereket Girma | Portfolio</Link>
-                    </div>
-
-                    <nav className="hidden md:flex space-x-8">
-                        {navLinks.map((link) => (
-                            <Link key={link.name} href={link.href} className="text-[#f0ebd8] hover:text-white">
-                                {link.name}
-                            </Link>
-                        ))}
-                    </nav>
-
-                    <div className="md:hidden">
-                        <Sheet open={open} onOpenChange={setOpen}>
-                            <SheetTrigger asChild>
-                                <Button variant="ghost" className="text-[#f0ebd8]">
-                                    <Menu className="h-6 w-6"/>
-                                    <span className="sr-only">Toggle Menu</span>
-                                </Button>
-                            </SheetTrigger>
-                            
-                            <SheetContent className="w-fit pr-32 bg-[#0d1321]/80 backdrop-blur-lg border-[#3e5c76] text-[#f0ebd8]">
-                                <motion.div
-                                    initial={{ x: 100, opacity: 0 }}
-                                    animate={{ x: 0, opacity: 1 }}
-                                    exit={{ x: 100, opacity: 0 }}
-                                    transition={{
-                                        type: "spring",
-                                        stiffness: 300,
-                                        damping: 30,
-                                        duration: 0.3,
-                                    }}
-                                    className="h-full"
-                                >
-                                    <SheetTitle>
-                                        <VisuallyHidden>Navigation Menu</VisuallyHidden>
-                                    </SheetTitle>
-                                    <nav className="flex flex-col space-y-6 mt-10">
-                                        {navLinks.map((link) => (
-                                            <Link
-                                                key={link.name}
-                                                href={link.href}
-                                                className="text-xl  hover:text-white transition-colors"
-                                                onClick={() => setOpen(false)}
-                                            >
-                                                {link.name}
-                                            </Link>
-                                        ))}
-                                    </nav>
-                                </motion.div>
-                            </SheetContent>
-                        </Sheet>
-                    </div>
+                <div className="flex items-center gap-4">
+                    <button
+                        className="theme-toggle relative h-7 w-[52px] shrink-0 rounded-full border border-line bg-bg-2 p-0 transition-[background,border-color] duration-[400ms]"
+                        data-theme-toggle
+                        aria-label="Toggle dark mode"
+                    >
+                        <span className="absolute left-0.5 top-0.5 grid h-[22px] w-[22px] place-items-center rounded-full bg-ink text-[11px] text-bg transition-transform duration-[400ms] [transition-timing-function:cubic-bezier(0.34,1.56,0.64,1)] dark:translate-x-6">
+                            ☾
+                        </span>
+                    </button>
+                    <a
+                        href="#contact"
+                        className="whitespace-nowrap rounded-lg border border-ink px-4 py-[9px] font-mono text-[13px] font-semibold transition-colors hover:bg-ink hover:text-bg"
+                    >
+                        Let&apos;s talk
+                    </a>
+                    <button
+                        className="nav-burger grid h-[42px] w-[42px] place-items-center gap-[5px] rounded-[9px] border border-line bg-transparent md:hidden"
+                        aria-label="Menu"
+                    >
+                        <span className="block h-[1.6px] w-[18px] bg-ink" />
+                        <span className="block h-[1.6px] w-[18px] bg-ink" />
+                        <span className="block h-[1.6px] w-[18px] bg-ink" />
+                    </button>
                 </div>
+            </header>
+
+            {/* Mobile menu overlay */}
+            <div className="m-menu fixed inset-0 z-[99] flex flex-col justify-center gap-1.5 bg-bg px-8 md:hidden">
+                {site.navLinks.map((link) => (
+                    <a
+                        key={link.href}
+                        href={link.href}
+                        className="flex items-baseline gap-[14px] py-1.5 font-display text-[clamp(34px,11vw,60px)] font-bold tracking-[-0.03em]"
+                    >
+                        <span className="font-mono text-sm text-accent">{link.num}</span>
+                        {link.label}
+                    </a>
+                ))}
             </div>
-        </motion.header>
+        </>
     )
 }
 

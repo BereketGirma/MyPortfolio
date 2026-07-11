@@ -1,62 +1,45 @@
-"use client"
-
-// Framer motion
-import { motion } from "framer-motion"
-
-//Icons
-import { BriefcaseIcon, Calendar } from "lucide-react"
-
-// Components
-import { Card, CardContent } from "@/components/ui/card"
-
-// Data
-import { experiences } from "../data/Experience";
+// Experience timeline. `tl-item` is a cursor hook; `r` + `data-stagger` drive
+// the reveal animation.
+import { experiences } from "@/data/Experience"
 
 const Experience = () => {
-    return(
-        <section id="experience" className="py-12">
-            <div>
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true }}
-                    className="space-y-4 mb-12"
-                >
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#f0ebd8]">Work Experience</h2>
-                    <div className="w-20 h-1 bg-[#748cab]"></div>
-                </motion.div>
+    return (
+        <section className="mx-auto w-full max-w-wrap px-[26px] py-[clamp(80px,11vw,150px)] md:px-14" id="experience">
+            <div className="r mb-[clamp(40px,6vw,72px)] flex items-baseline gap-5">
+                <span className="pt-2 font-mono text-[13px] font-bold tracking-[0.05em] text-accent">03</span>
+                <h2 className="font-display text-[clamp(34px,5.2vw,60px)] font-bold leading-[0.95] tracking-[-0.03em]">Experience</h2>
+                <p className="ml-auto hidden max-w-[300px] pt-1.5 text-right text-[15px] leading-[1.55] text-ink-mute md:block">
+                    Startup leadership as CTO, campus IT, an engineering internship, and peer-led teaching.
+                </p>
+            </div>
 
-                <div className="space-y-8">
-                    {experiences.map((exp, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                        viewport={{ once: true }}
+            <div className="flex flex-col" data-stagger>
+                {experiences.map((exp, i) => (
+                    <div
+                        key={i}
+                        className="tl-item r grid grid-cols-1 gap-[14px] border-t border-line py-[34px] transition-colors last:border-b hover:bg-[color-mix(in_srgb,var(--accent)_5%,transparent)] md:grid-cols-[150px_1fr] md:gap-10"
                     >
-                        <Card className="bg-[#1d2d44]/30 border-[#3e5c76]/30 backdrop-blur-md overflow-hidden shadow-lg shadow-[#3e5c76]/10">
-                        <CardContent className="p-6">
-                            <div className="flex flex-col md:flex-row md:items-center gap-4">
-                            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#3e5c76]/30 flex items-center justify-center">
-                                <BriefcaseIcon className="h-6 w-6 text-[#748cab]" />
+                        <div className="flex flex-col gap-1.5 pt-1.5 font-mono text-[12.5px] text-ink-mute">
+                            <span className="inline-flex items-center gap-[7px]">
+                                <span className="grid h-7 w-7 place-items-center rounded-[7px] bg-ink font-display text-[13px] font-bold text-bg">{exp.badge}</span>
+                            </span>
+                            {exp.period}
+                        </div>
+                        <div>
+                            <div className="flex flex-wrap items-baseline gap-3">
+                                <h3 className="font-display text-[clamp(22px,2.8vw,30px)] font-bold tracking-[-0.02em]">{exp.title}</h3>
+                                <span className="font-mono text-[13px] text-accent">{exp.company}</span>
                             </div>
-                            <div className="space-y-2 flex-grow">
-                                <h3 className="text-xl font-semibold text-[#f0ebd8]">{exp.title}</h3>
-                                <p className="text-[#748cab]">{exp.company}</p>
-                                <div className="flex items-center text-[#748cab]">
-                                <Calendar className="h-4 w-4 mr-2" />
-                                <span>{exp.period}</span>
-                                </div>
-                                <p className="text-[#f0ebd8]/80 mt-2">{exp.description}</p>
-                            </div>
-                            </div>
-                        </CardContent>
-                        </Card>
-                    </motion.div>
-                    ))}
-                </div>
+                            <ul className="mt-4 flex list-none flex-col gap-[9px] p-0">
+                                {exp.bullets.map((bullet, b) => (
+                                    <li key={b} className="relative pl-[22px] text-[15.5px] leading-[1.5] text-ink-soft before:absolute before:left-0 before:text-ink-faint before:content-['→']">
+                                        {bullet}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                ))}
             </div>
         </section>
     )
